@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rent_app/pages/home/home_page.dart';
 
 import 'application.dart';
 import 'configs/routes.dart';
@@ -19,15 +20,16 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    final router = FluroRouter();
-    Application.router = router; //一定要先写这行
-    Routes.configureRoutes(router); //再写这一行，因为我们在application中为给router初始值，如果先使用它肯定报错，所以要先赋值再使用
+    Application.router = FluroRouter();
+    Routes.configureRoutes(Application.router);
   }
+
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
+      home: const HomePage(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
         useMaterial3: true,
