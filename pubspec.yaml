@@ -22,7 +22,7 @@ flutter:
   fonts:
     - family: Schuyler
       fonts:
-        - asset: /assets/fonts/Schuyler.ttf
+        - asset: assets/fonts/Schuyler.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
