@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rent_app/configs/routes.dart';
-
 import '../application.dart';
 
 class NotFoundPage extends StatelessWidget {
@@ -19,7 +17,7 @@ class NotFoundPage extends StatelessWidget {
             const Text("您访问的页面不存在"),
             TextButton(
                 onPressed: () =>
-                    {Application.router.navigateTo(context, Routes.home)},
+                    {Application.router.navigateTo(context, '/home')},
                 child: const Text("返回首页"))
           ],
         ),

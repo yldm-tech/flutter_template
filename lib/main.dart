@@ -2,9 +2,6 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rent_app/pages/home/home_page.dart';
 
-import 'application.dart';
-import 'configs/routes.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -20,8 +17,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    Application.router = FluroRouter();
-    Routes.configureRoutes(Application.router);
   }
 
   @override
@@ -33,9 +28,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
         useMaterial3: true,
-        primarySwatch: Colors.blue,
       ),
-      onGenerateRoute: Application.router.generator, //全局注册
     );
   }
 }
