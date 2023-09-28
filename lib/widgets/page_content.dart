@@ -24,6 +24,9 @@ class PageContent extends StatelessWidget {
                   onPressed: () => {Navigator.pushNamed(context, Routes.login)},
                   child: const Text("login")),
               TextButton(
+                  onPressed: () => {Navigator.pushNamed(context, 'room/222')},
+                  child: const Text("room detail")),
+              TextButton(
                   onPressed: () => {Navigator.pushNamed(context, "123123")},
                   child: const Text("not found")),
             ]),
