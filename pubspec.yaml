@@ -20,10 +20,9 @@ flutter:
   assets:
     - assets/images/
   fonts:
-    - family: Schyler
+    - family: Schuyler
       fonts:
-        - asset: /assets/fonts/Schyler.ttf
-          style: italic
+        - asset: /assets/fonts/Schuyler.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
