@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../configs/routes.dart';
+
 class PageContent extends StatelessWidget {
   final String name;
   const PageContent({Key? key, required this.name}) : super(key: key);
@@ -11,15 +13,20 @@ class PageContent extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(name),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'This is the page content.',
-            ),
-          ],
-        ),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextButton(
+                  onPressed: () => {Navigator.pushNamed(context, Routes.home)},
+                  child: const Text("home")),
+              TextButton(
+                  onPressed: () => {Navigator.pushNamed(context, Routes.login)},
+                  child: const Text("login")),
+              TextButton(
+                  onPressed: () => {Navigator.pushNamed(context, "123123")},
+                  child: const Text("not found")),
+            ]),
       ),
     );
   }
