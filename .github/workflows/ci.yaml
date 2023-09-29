@@ -6,7 +6,7 @@ on:
       - feature/mi_card
 
 jobs:
-  build_and_test:
+  build_app:
     runs-on: ubuntu-latest
 
     steps:
