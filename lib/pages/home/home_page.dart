@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
         ),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const CircleAvatar(
                 radius: 50,
