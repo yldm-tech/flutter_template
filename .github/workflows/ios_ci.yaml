@@ -16,7 +16,7 @@ jobs:
       - name: Install Dependencies
         run: |
           xcode-select -p
-          sudo xcode-select -switch /Applications/Xcode_15.app # 替换XX为你要使用的Xcode版本
+          sudo xcode-select -switch /Applications/Xcode_14.2.app 
           gem install cocoapods
           pod install
 
