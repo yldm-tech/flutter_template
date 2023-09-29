@@ -36,58 +36,50 @@ class HomePage extends StatelessWidget {
                   color: Colors.teal.shade100,
                 ),
               ),
-              Container(
-                alignment: Alignment.center,
-                color: Colors.white,
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                padding: const EdgeInsets.all(10),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.phone,
-                      color: Colors.teal,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      '+86 123 456 789',
-                      style: TextStyle(
-                        fontFamily: 'SourceSan3',
-                        fontSize: 18,
-                        color: Colors.teal.shade900,
-                      ),
-                    )
-                  ],
+             SizedBox(
+                height: 20,
+                width: 150,
+                child: Divider(
+                  color: Colors.teal.shade100,
                 ),
               ),
-              Container(
-                alignment: Alignment.center,
+              Card(
                 color: Colors.white,
                 margin:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                padding: const EdgeInsets.all(10),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.email,
-                      color: Colors.teal,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      '123456@gmail.com',
-                      style: TextStyle(
-                        fontFamily: 'SourceSan3',
-                        fontSize: 18,
-                        color: Colors.teal.shade900,
+                child:  ListTile(
+                      leading: const Icon(
+                        Icons.phone,
+                        color: Colors.teal,
                       ),
-                    )
-                  ],
-                ),
-              )
+                      title: Text(
+                        '+86 123 456 789',
+                        style: TextStyle(
+                          fontFamily: 'SourceSan3',
+                          fontSize: 18,
+                          color: Colors.teal.shade900,
+                        ),
+                      )),
+              ),
+              Card(
+                color: Colors.white,
+                margin:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                child: ListTile(
+
+                      leading: const Icon(
+                        Icons.email,
+                        color: Colors.teal,
+                      ),
+                      title: Text(
+                        '123456@gmail.com',
+                        style: TextStyle(
+                          fontFamily: 'SourceSan3',
+                          fontSize: 18,
+                          color: Colors.teal.shade900,
+                        ),
+                      )),
+              ),
             ],
           ),
         ));
