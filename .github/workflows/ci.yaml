@@ -25,10 +25,14 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
-      # OR
-
       - name: Build AAB
         run: flutter build appbundle --release
+
+      #      - name: Build IOS
+      #        run: flutter build ios --no-codesign
+      #
+      #      - name: Build Macos
+      #        run: flutter build macos --no-codesign
 
       - name: Upload APK
         uses: actions/upload-artifact@v3
