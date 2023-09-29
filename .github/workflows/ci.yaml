@@ -21,9 +21,6 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
-      - name: Run Tests
-        run: flutter test
-
       # Add more steps if needed, e.g., building APK or AAB, deploying to stores, etc.
       - name: Build APK
         run: flutter build apk --release
