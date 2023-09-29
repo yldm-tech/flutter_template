@@ -35,3 +35,9 @@ jobs:
         with:
           name: mi-card.apk
           path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Upload AAB
+        uses: actions/upload-artifact@v3
+        with:
+          name: mi-card.aab
+          path: build/app/outputs/flutter-apk/app-release.aab
