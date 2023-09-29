@@ -40,4 +40,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: mi-card.aab
-          path: build/app/outputs/flutter-apk/app-release.aab
+          path: build/app/outputs/bundle/release/app-release.aab
