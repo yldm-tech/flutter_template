@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rent_app/configs/routes.dart';
+import 'package:template/configs/routes.dart';
 
 import '../application.dart';
 

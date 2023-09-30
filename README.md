@@ -1,4 +1,4 @@
-# flutter_rent_app
+# template
 
 A new Flutter project.
 
