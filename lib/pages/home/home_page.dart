@@ -1,7 +1,26 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int leftIndex = 1;
+  int rightIndex = 1;
+
+  void changeDicee(){
+    var left = Random().nextInt(6) + 1;
+    var right = Random().nextInt(6) + 1;
+    setState(() {
+      leftIndex = left;
+      rightIndex = right;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,21 +35,27 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: const Row(
-        children: [
-          Expanded(
-            flex: 2,
-            child: Image(
-              image: AssetImage('images/dice1.png'),
+      body: Center(
+        child: Row(
+          children: [
+            Expanded(
+              child: TextButton(
+                onPressed: changeDicee,
+                child: Image(
+                  image: AssetImage('assets/images/dice$leftIndex.png'),
+                ),
+              ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Image(
-              image: AssetImage('images/dice1.png'),
+            Expanded(
+              child: TextButton(
+                onPressed: changeDicee,
+                child: Image(
+                  image: AssetImage('assets/images/dice$rightIndex.png'),
+                ),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
