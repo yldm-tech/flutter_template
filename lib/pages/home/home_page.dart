@@ -10,71 +10,78 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   /// 生成一个按钮
-  Widget buildKey(
-    Color color,
-    String soundName,
-    String name,
-  ) {
-    return Expanded(
-      child: TextButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(color),
-          foregroundColor: MaterialStateProperty.all(Colors.white),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(0),
-            ),
-          ),
-        ),
-        onPressed: () {
-          final player = AudioPlayer();
-          player.play(AssetSource('wav/note$soundName.wav'));
-        },
-        child: Text(name),
-      ),
-    );
-  }
-
-  List<Widget> buildKeys() {
-    return [
-      buildKey(Colors.red, "1", "Do"),
-      buildKey(Colors.orange, "2", "Re"),
-      buildKey(Colors.yellow, "3", "Mi"),
-      buildKey(Colors.green, "4", "Fa"),
-      buildKey(Colors.teal, "5", "Sol"),
-      buildKey(Colors.blue, "6", "La"),
-      buildKey(Colors.purple, "7", "Si"),
-    ];
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text(
-          'quizzer',
-          style: TextStyle(
-            color: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: const Text(
+            'Quizzer',
+            style: TextStyle(
+              color: Colors.white,
+            ),
           ),
         ),
-      ),
-      body: SafeArea(
-        child: OrientationBuilder(
-            builder: (BuildContext context, Orientation orientation) {
-          print("当前屏幕的方向是：$orientation");
-          if (orientation == Orientation.portrait) {
-            return Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: buildKeys());
-          } else {
-            return Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: buildKeys());
-          }
-        }),
-      ),
-    );
+        body: SafeArea(
+            child: Column(children: [
+          const Expanded(
+            flex: 5,
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Center(
+                child: Text(
+                  'This is where the question text will go.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 25.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: TextButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.green),
+                ),
+                child: const Text(
+                  'True',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                  ),
+                ),
+                onPressed: () {
+                  //The user picked true.
+                },
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: TextButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red),
+                ),
+                child: const Text(
+                  'False',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () {
+                  //The user picked false.
+                },
+              ),
+            ),
+          ),
+        ])));
   }
 }
