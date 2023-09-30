@@ -1,5 +1,4 @@
-import 'dart:math';
-
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,51 +9,58 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int leftIndex = 1;
-  int rightIndex = 1;
-
-  void changeDicee(){
-    var left = Random().nextInt(6) + 1;
-    var right = Random().nextInt(6) + 1;
-    setState(() {
-      leftIndex = left;
-      rightIndex = right;
-    });
+  Widget buildKey(
+    Color color,
+    String soundName,
+    String name,
+  ) {
+    return Expanded(
+      child: TextButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(color),
+          foregroundColor: MaterialStateProperty.all(Colors.white),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(0),
+            ),
+          ),
+        ),
+        onPressed: () {
+          final player = AudioPlayer();
+          player.play(AssetSource('wav/note$soundName.wav'));
+        },
+        child:  Text(name),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.black,
         title: const Text(
-          'Dicee',
+          'xylophone',
           style: TextStyle(
             color: Colors.white,
           ),
         ),
       ),
-      body: Center(
-        child: Row(
-          children: [
-            Expanded(
-              child: TextButton(
-                onPressed: changeDicee,
-                child: Image(
-                  image: AssetImage('assets/images/dice$leftIndex.png'),
-                ),
-              ),
-            ),
-            Expanded(
-              child: TextButton(
-                onPressed: changeDicee,
-                child: Image(
-                  image: AssetImage('assets/images/dice$rightIndex.png'),
-                ),
-              ),
-            ),
-          ],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              buildKey(Colors.red, "1", "Do"),
+              buildKey(Colors.orange, "2", "Re"),
+              buildKey(Colors.yellow, "3", "Mi"),
+              buildKey(Colors.green, "4", "Fa"),
+              buildKey(Colors.teal, "5", "Sol"),
+              buildKey(Colors.blue, "6", "La"),
+              buildKey(Colors.purple, "7", "Si"),
+            ],
+          ),
         ),
       ),
     );
