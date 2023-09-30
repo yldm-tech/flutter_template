@@ -12,5 +12,12 @@ class Assets {
   static const String imagesDice5 = 'assets/images/dice5.png';
   static const String imagesDice6 = 'assets/images/dice6.png';
   static const String imagesQrcode = 'assets/images/qrcode.png';
+  static const String movNote1 = 'assets/mov/note1.wav';
+  static const String movNote2 = 'assets/mov/note2.wav';
+  static const String movNote3 = 'assets/mov/note3.wav';
+  static const String movNote4 = 'assets/mov/note4.wav';
+  static const String movNote5 = 'assets/mov/note5.wav';
+  static const String movNote6 = 'assets/mov/note6.wav';
+  static const String movNote7 = 'assets/mov/note7.wav';
 
 }
