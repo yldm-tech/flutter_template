@@ -1,4 +1,4 @@
-package com.example.flutter_rent_app
+package tech.yldm.flutter_rent_app
 
 import io.flutter.embedding.android.FlutterActivity
 
