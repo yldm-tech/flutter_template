@@ -1,4 +1,4 @@
-package tech.yldm.xylophone
+package tech.yldm.quizzer
 
 import io.flutter.embedding.android.FlutterActivity
 

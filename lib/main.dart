@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:xylophone/pages/home/home_page.dart';
+import 'package:quizzer/pages/home/home_page.dart';
 
 void main() {
   runApp(const MyApp());

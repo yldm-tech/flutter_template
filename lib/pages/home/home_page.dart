@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: const Text(
-          'xylophone',
+          'quizzer',
           style: TextStyle(
             color: Colors.white,
           ),
