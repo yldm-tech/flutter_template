@@ -9,6 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  /// 生成一个按钮
   Widget buildKey(
     Color color,
     String soundName,
@@ -29,9 +30,21 @@ class _HomePageState extends State<HomePage> {
           final player = AudioPlayer();
           player.play(AssetSource('wav/note$soundName.wav'));
         },
-        child:  Text(name),
+        child: Text(name),
       ),
     );
+  }
+
+  List<Widget> buildKeys() {
+    return [
+      buildKey(Colors.red, "1", "Do"),
+      buildKey(Colors.orange, "2", "Re"),
+      buildKey(Colors.yellow, "3", "Mi"),
+      buildKey(Colors.green, "4", "Fa"),
+      buildKey(Colors.teal, "5", "Sol"),
+      buildKey(Colors.blue, "6", "La"),
+      buildKey(Colors.purple, "7", "Si"),
+    ];
   }
 
   @override
@@ -48,20 +61,19 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: SafeArea(
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              buildKey(Colors.red, "1", "Do"),
-              buildKey(Colors.orange, "2", "Re"),
-              buildKey(Colors.yellow, "3", "Mi"),
-              buildKey(Colors.green, "4", "Fa"),
-              buildKey(Colors.teal, "5", "Sol"),
-              buildKey(Colors.blue, "6", "La"),
-              buildKey(Colors.purple, "7", "Si"),
-            ],
-          ),
-        ),
+        child: OrientationBuilder(
+            builder: (BuildContext context, Orientation orientation) {
+          print("当前屏幕的方向是：$orientation");
+          if (orientation == Orientation.portrait) {
+            return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: buildKeys());
+          } else {
+            return Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: buildKeys());
+          }
+        }),
       ),
     );
   }
