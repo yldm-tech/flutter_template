@@ -1,4 +1,4 @@
-package tech.yldm.flutter_rent_app
+package tech.yldm.xylophone
 
 import io.flutter.embedding.android.FlutterActivity
 
