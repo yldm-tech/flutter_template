@@ -1,4 +1,4 @@
-# flutter_rent_app
+# mi_card
 
 A new Flutter project.
 

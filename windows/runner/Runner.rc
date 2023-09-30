@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "flutter_rent_app" "\0"
+            VALUE "CompanyName", "tech.yldm" "\0"
+            VALUE "FileDescription", "mi_card" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "flutter_rent_app" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "flutter_rent_app.exe" "\0"
-            VALUE "ProductName", "flutter_rent_app" "\0"
+            VALUE "InternalName", "mi_card" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 YLDM TECH. All rights reserved." "\0"
+            VALUE "OriginalFilename", "mi_card.exe" "\0"
+            VALUE "ProductName", "mi_card" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

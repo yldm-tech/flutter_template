@@ -1,4 +1,4 @@
-package com.example.flutter_rent_app
+package tech.yldm.mi_card
 
 import io.flutter.embedding.android.FlutterActivity
 
