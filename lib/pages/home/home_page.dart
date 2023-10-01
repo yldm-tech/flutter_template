@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  void _incrementCounter() async {
+  void incrementCounter() async {
     TestRequest request = TestRequest();
     request.add("course-flag", "flutter").add("requestPrams", "22");
     try {
