@@ -15,7 +15,7 @@ abstract class BaseRequest {
 
   Map<String, String> params = {};
 
-  Map<String, dynamic> header = {
+  Map<String,String> header = {
     'course-flag': 'fa',
     'auth-token': 'ZmEtMjAyMS0wNC0wMiAyMToyMTo0Ni1mYQ==fa',
   };
