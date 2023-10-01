@@ -13,34 +13,34 @@ class DioAdapter extends YldmNetAdapter {
       switch (request.method()) {
         case HttpMethod.get:
           response = await Dio().get(
-            request.url(),
+            request.url().toString(),
             options: option,
           );
           break;
         case HttpMethod.post:
           response = await Dio().post(
-            request.url(),
+            request.url().toString(),
             options: option,
             data: request.params,
           );
           break;
         case HttpMethod.delete:
           response = await Dio().delete(
-            request.url(),
+            request.url().toString(),
             options: option,
             data: request.params,
           );
           break;
         case HttpMethod.put:
           response = await Dio().put(
-            request.url(),
+            request.url().toString(),
             options: option,
             data: request.params,
           );
           break;
         case HttpMethod.patch:
           response = await Dio().patch(
-            request.url(),
+            request.url().toString(),
             options: option,
             data: request.params,
           );

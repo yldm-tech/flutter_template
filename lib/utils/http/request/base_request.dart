@@ -15,7 +15,7 @@ abstract class BaseRequest {
 
   Map<String, String> params = {};
 
-  Map<String,String> header = {
+  Map<String, String> header = {
     'course-flag': 'fa',
     'auth-token': 'ZmEtMjAyMS0wNC0wMiAyMToyMTo0Ni1mYQ==fa',
   };
@@ -32,7 +32,7 @@ abstract class BaseRequest {
   }
 
   // 拼接url
-  String url() {
+  Uri url() {
     Uri uri;
     var pathStr = path();
     // 拼接path参数
@@ -57,7 +57,7 @@ abstract class BaseRequest {
         LoginService.getBoardingPass() ?? "",
       );
     }
-    return uri.toString();
+    return uri;
   }
 
   // 添加参数
@@ -68,7 +68,7 @@ abstract class BaseRequest {
 
   // 添加header参数
   BaseRequest addHeader(String key, Object value) {
-    if(value == "") return this;
+    if (value == "") return this;
     header[key] = value.toString();
     return this;
   }

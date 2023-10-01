@@ -1,6 +1,7 @@
 import 'package:bilibili/utils/http/core/yldm_net_adapter.dart';
 import 'package:bilibili/utils/http/request/base_request.dart';
 import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
 
 class HttpAdapter extends YldmNetAdapter {
   @override
@@ -9,24 +10,24 @@ class HttpAdapter extends YldmNetAdapter {
     switch (request.method()) {
       case HttpMethod.get:
         response = await http.get(
-          Uri(path: request.url()),
+          request.url(),
           headers: request.header,
         );
       case HttpMethod.post:
         response = await http.post(
-          Uri(path: request.url()),
+          request.url(),
           headers: request.header,
           body: request.params,
         );
       case HttpMethod.delete:
         response = await http.delete(
-          Uri(path: request.url()),
+          request.url(),
           headers: request.header,
           body: request.params,
         );
       case HttpMethod.put:
         response = await http.put(
-          Uri(path: request.url()),
+          request.url(),
           headers: request.header,
           body: request.params,
         );
@@ -41,7 +42,7 @@ class HttpAdapter extends YldmNetAdapter {
       throw Exception("response is null");
     }
     final statusCode = response.statusCode;
-    final body = response.body as T;
+    final body = convert.jsonDecode(response.body) as T;
     if (statusCode == 200) {
       return HiNetResponse<T>(
           data: body, statusCode: statusCode, statusMessage: "success");

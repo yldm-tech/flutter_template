@@ -8,6 +8,7 @@ void main() {
 
 void testHttp() {
   test("testHttpApi", () async {
+    YldmNet.isDio = false;
     var res = await YldmNet.getInstance()
         .fire(TestRequest().add("course-flag", "fa").add("requestPrams", "22"));
     expect(res['msg'], "SUCCESS.");

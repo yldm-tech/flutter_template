@@ -1,10 +1,14 @@
 import 'package:bilibili/utils/http/core/dio_adapter.dart';
+import 'package:bilibili/utils/http/core/http_adapter.dart';
 import 'package:bilibili/utils/http/core/yldm_error.dart';
+import 'package:bilibili/utils/http/core/yldm_net_adapter.dart';
 import 'package:bilibili/utils/http/request/base_request.dart';
 import 'package:bilibili/utils/yldm.dart';
 
 class YldmNet {
   YldmNet._();
+
+  static var isDio = true;
 
   static YldmNet? _instance;
 
@@ -30,7 +34,12 @@ class YldmNet {
   }
 
   Future<dynamic> send<T>(BaseRequest request) async {
-    var adapter = DioAdapter();
+    YldmNetAdapter adapter;
+    if (isDio) {
+      adapter = DioAdapter();
+    } else {
+      adapter = HttpAdapter();
+    }
     Yldm.printLog("url:${request.url()}");
     Yldm.printLog("method:${request.method()}");
     Yldm.printLog("header:${request.header}");
