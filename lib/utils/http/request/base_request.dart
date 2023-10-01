@@ -1,3 +1,5 @@
+import 'package:bilibili/services/login_service.dart';
+
 enum HttpMethod { get, post, put, delete, patch }
 
 /// 接口文档地址
@@ -13,7 +15,10 @@ abstract class BaseRequest {
 
   Map<String, String> params = {};
 
-  Map<String, dynamic> header = {};
+  Map<String, dynamic> header = {
+    'course-flag': 'fa',
+    'auth-token': 'ZmEtMjAyMS0wNC0wMiAyMToyMTo0Ni1mYQ==fa',
+  };
 
   // 请求方法
   HttpMethod method() {
@@ -21,6 +26,7 @@ abstract class BaseRequest {
   }
 
   // 接口
+  // fixme 这里为了通用性，不应该直接写死，应该通过环境变量来配置
   String authority() {
     return "api.devio.org";
   }
@@ -43,6 +49,14 @@ abstract class BaseRequest {
     } else {
       uri = Uri.http(authority(), pathStr, params);
     }
+
+    if (needLogin()) {
+      // fixme 这里为了通用性，不应该直接依赖登录模块,应该通过拦截器来实现
+      addHeader(
+        LoginService.boardingPass,
+        LoginService.getBoardingPass() ?? "",
+      );
+    }
     return uri.toString();
   }
 
@@ -54,6 +68,7 @@ abstract class BaseRequest {
 
   // 添加header参数
   BaseRequest addHeader(String key, Object value) {
+    if(value == "") return this;
     header[key] = value.toString();
     return this;
   }
