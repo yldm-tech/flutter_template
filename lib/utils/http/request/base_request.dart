@@ -3,7 +3,7 @@ enum HttpMethod { get, post, put, delete, patch }
 /// 接口文档地址
 /// https://api.devio.org/uapi/swagger-ui.html
 abstract class BaseRequest {
-  var pathParams;
+  String? pathParams;
 
   var useHttps = true;
 
