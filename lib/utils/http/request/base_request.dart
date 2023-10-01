@@ -13,7 +13,7 @@ abstract class BaseRequest {
 
   Map<String, String> params = {};
 
-  Map<String, dynamic> header = {};
+  Map<String, String> header = {};
 
   // 请求方法
   HttpMethod method() {
