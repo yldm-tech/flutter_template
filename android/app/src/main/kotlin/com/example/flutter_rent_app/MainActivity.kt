@@ -1,4 +1,4 @@
-package tech.yldm.quizzer
+package tech.yldm.bilibili
 
 import io.flutter.embedding.android.FlutterActivity
 

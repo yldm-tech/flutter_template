@@ -1,4 +1,4 @@
-name: quizzer
+name: bilibili
 description: A new Flutter project.
 publish_to: 'none'
 version: 1.0.0+1
@@ -10,6 +10,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   fluro: ^2.0.5
   audioplayers: ^5.1.0
+  dio: ^5.3.3
 
 dev_dependencies:
   flutter_test:
@@ -20,12 +21,11 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
-    - assets/wav/
     - assets/fonts/
-  fonts:
-    - family: SourceSans3
-      fonts:
-        - asset: assets/fonts/SourceSans3-Regular.ttf
-    - family: Pacifico
-      fonts:
-       - asset: assets/fonts/Pacifico-Regular.ttf
+  # fonts:
+    # - family: SourceSans3
+    #   fonts:
+    #     - asset: assets/fonts/SourceSans3-Regular.ttf
+    # - family: Pacifico
+    #   fonts:
+    #    - asset: assets/fonts/Pacifico-Regular.ttf

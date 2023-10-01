@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "tech.yldm" "\0"
-            VALUE "FileDescription", "quizzer" "\0"
+            VALUE "FileDescription", "bilibili" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "quizzer" "\0"
+            VALUE "InternalName", "bilibili" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 tech.yldm. All rights reserved." "\0"
-            VALUE "OriginalFilename", "quizzer.exe" "\0"
-            VALUE "ProductName", "quizzer" "\0"
+            VALUE "OriginalFilename", "bilibili.exe" "\0"
+            VALUE "ProductName", "bilibili" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

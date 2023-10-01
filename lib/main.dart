@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quizzer/pages/home/home_page.dart';
+import 'package:bilibili/pages/home/home_page.dart';
 
 void main() {
   runApp(const MyApp());
