@@ -5,6 +5,7 @@
 - shared_preferences
 - dio
 - json_annotation
+- http
 
 # 开发依赖
 - build_runner
