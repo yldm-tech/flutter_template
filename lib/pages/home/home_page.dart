@@ -33,7 +33,8 @@ class _HomePageState extends State<HomePage> {
 
   void testNotice() async {
     try {
-      var result = await YldmNet.getInstance().fire(NoticeRequest());
+      var result = await YldmNet.getInstance().fire(
+          TestRequest().add("course-flag", "fa").add("requestPrams", "22"));
       Yldm.printLog(result);
     } on NeedLogin catch (e) {
       Yldm.printLog('needLogin: $e');

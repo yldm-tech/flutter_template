@@ -39,5 +39,4 @@ class YldmNet {
     Yldm.printLog("needLogin:${request.needLogin()}");
     return adapter.send(request);
   }
-
 }
