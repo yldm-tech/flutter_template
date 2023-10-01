@@ -11,11 +11,15 @@ dependencies:
   fluro: ^2.0.5
   audioplayers: ^5.1.0
   dio: ^5.3.3
+  json_annotation: ^4.8.1
+  shared_preferences: ^2.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.3
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
 
 flutter:
   uses-material-design: true

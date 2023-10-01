@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:bilibili/http/request/base_request.dart';
+import 'package:bilibili/utils/http/request/base_request.dart';
 
 /// 网络请求抽象类
 abstract class YldmNetAdapter {

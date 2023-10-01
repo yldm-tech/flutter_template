@@ -1,6 +1,6 @@
-import 'package:bilibili/http/core/dio_adapter.dart';
-import 'package:bilibili/http/core/yldm_error.dart';
-import 'package:bilibili/http/request/base_request.dart';
+import 'package:bilibili/utils/http/core/dio_adapter.dart';
+import 'package:bilibili/utils/http/core/yldm_error.dart';
+import 'package:bilibili/utils/http/request/base_request.dart';
 import 'package:flutter/foundation.dart';
 
 class YldmNet {
@@ -34,9 +34,4 @@ class YldmNet {
     return adapter.send(request);
   }
 
-  static void printLog(log) {
-    if (kDebugMode) {
-      print("yldm_net: $log");
-    }
-  }
 }

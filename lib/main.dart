@@ -1,3 +1,4 @@
+import 'package:bilibili/utils/db/yldm_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:bilibili/pages/home/home_page.dart';
 
@@ -16,6 +17,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    YldmCache.preInit();
   }
 
   @override

@@ -1,0 +1,36 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - echo {{.CLI_ARGS}}
+    silent: true
+  
+  init:
+    cmds:
+      -  npm install -g conventional-changelog-cli
+      -  npm install -g standard-version
+      -  npm install -g commitizen
+      -  flutter pub get
+
+  changelog:
+    cmds:
+      - conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+
+  generate:
+    cmds:
+      - dart run build_runner build
+
+  upgrade:
+    cmds:
+      - flutter pub outdated
+      - flutter pub upgrade
+
+  commit:
+      cmds:
+          - git add .
+          - git cz
+          - git push
+
