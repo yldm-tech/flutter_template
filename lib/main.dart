@@ -1,6 +1,8 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:tiktik/pages/home/home_page.dart';
+import 'package:tiktik/pages/demo/native_basic_message.dart';
+import 'package:tiktik/pages/demo/native_event_channel.dart';
+import 'package:tiktik/pages/demo/native_method_channel.dart';
 
 import 'application.dart';
 import 'configs/routes.dart';
@@ -29,7 +31,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
-      home: const HomePage(),
+      home: const NativeMethodChannelPage(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
         useMaterial3: true,
