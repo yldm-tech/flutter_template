@@ -1,6 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:template/pages/login_page.dart';
+import 'package:tiktik/pages/login_page.dart';
 
 import '../pages/home/home_page.dart';
 import '../pages/not_found_page.dart';

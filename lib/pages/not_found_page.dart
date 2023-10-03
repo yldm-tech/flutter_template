@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:template/configs/routes.dart';
+import 'package:tiktik/configs/routes.dart';
 
 import '../application.dart';
 
