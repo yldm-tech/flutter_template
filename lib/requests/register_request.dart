@@ -1,21 +1,20 @@
+import 'package:bilibili/utils/http/base_request.dart';
 import 'package:bilibili/utils/yldm.dart';
 
-import '../utils/http/base_request.dart';
-
-class NoticeRequest extends BaseRequest {
+class RegisterRequest extends BaseRequest {
   @override
   bool needLogin() {
-    return true;
+    return false;
   }
 
   @override
   HttpMethod method() {
-    return HttpMethod.get;
+    return HttpMethod.post;
   }
 
   @override
   String path() {
-    return "/notice";
+    return "/user/register";
   }
 
   @override

@@ -1,8 +1,10 @@
-import 'package:bilibili/services/login_service.dart';
+import 'package:bilibili/requests/login_request.dart';
+import 'package:bilibili/requests/notice_request.dart';
+import 'package:bilibili/requests/register_request.dart';
 import 'package:bilibili/utils/db/yldm_cache.dart';
-import 'package:bilibili/utils/http/core/yldm_error.dart';
-import 'package:bilibili/utils/http/core/yldm_net.dart';
-import 'package:bilibili/utils/http/request/example/test_request.dart';
+import 'package:bilibili/utils/http/example/test_request.dart';
+import 'package:bilibili/utils/http/yldm_error.dart';
+import 'package:bilibili/utils/http/yldm_net.dart';
 import 'package:bilibili/utils/yldm.dart';
 import 'package:flutter/material.dart';
 
@@ -29,10 +31,12 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  void testNotice() async {
+  void testRegister() async {
     try {
-      var result = await YldmNet.getInstance().fire(
-          TestRequest().add("course-flag", "fa").add("requestPrams", "22"));
+      var result = await RegisterRequest().doRequest(params: {
+        "username": "yldm",
+        "password": "12345",
+      });
       Yldm.printLog(result);
     } on NeedLogin catch (e) {
       Yldm.printLog('needLogin: $e');
@@ -43,15 +47,35 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  void testRegister() async {
-    var result =
-        await LoginService.registration("yldm", "12345", "imoocId", "orderId");
-    Yldm.printLog(result);
+  void testLogin() async {
+    try {
+      var result = await LoginRequest()
+          .doRequest(params: {"username": "yldm", "password": "12345"});
+      Yldm.printLog(result);
+    } on NotFound catch (e) {
+      Yldm.printLog('needLogin: $e');
+    } on NeedLogin catch (e) {
+      Yldm.printLog('needLogin: $e');
+    } on NeedAuth catch (e) {
+      Yldm.printLog('needAuth: $e');
+    } on HiNetError catch (e) {
+      Yldm.printLog('hiNetError: $e');
+    }
   }
 
-  void testLogin() async {
-    var result = await LoginService.login("yldm", "12345");
-    Yldm.printLog(result);
+  void testNotice() async {
+    try {
+      var result = await NoticeRequest().doRequest();
+      Yldm.printLog(result);
+    } on NotFound catch (e) {
+      Yldm.printLog('needLogin: $e');
+    } on NeedLogin catch (e) {
+      Yldm.printLog('needLogin: $e');
+    } on NeedAuth catch (e) {
+      Yldm.printLog('needAuth: $e');
+    } on HiNetError catch (e) {
+      Yldm.printLog('hiNetError: $e');
+    }
   }
 
   void testGetCache() {
@@ -62,7 +86,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    testGetCache();
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -80,12 +103,16 @@ class _HomePageState extends State<HomePage> {
               child: const Text("发送请求"),
             ),
             TextButton(
-              onPressed: testLogin,
+              onPressed: testRegister,
               child: const Text("注册"),
             ),
             TextButton(
               onPressed: testLogin,
               child: const Text("登陆"),
+            ),
+            TextButton(
+              onPressed: testNotice,
+              child: const Text("Notice"),
             )
           ],
         ),

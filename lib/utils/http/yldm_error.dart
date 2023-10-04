@@ -8,6 +8,16 @@ class NeedAuth extends HiNetError {
       : super(code, message);
 }
 
+class NotFound extends HiNetError {
+  NotFound(String message, {int code = 404, dynamic data})
+      : super(code, message);
+}
+
+class NetworkError extends HiNetError {
+  NetworkError(String message, {int code = 408, dynamic data})
+      : super(code, message);
+}
+
 class HiNetError implements Exception {
   final int code;
   final String message;

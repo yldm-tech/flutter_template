@@ -1,34 +1,47 @@
-import 'package:bilibili/services/login_service.dart';
+import 'package:bilibili/utils/http/yldm_net.dart';
+import 'package:bilibili/utils/yldm.dart';
 
 enum HttpMethod { get, post, put, delete, patch }
 
 /// 接口文档地址
 /// https://api.devio.org/uapi/swagger-ui.html
-abstract class BaseRequest {
+abstract class BaseRequest<T> {
   String? pathParams;
+  String tokenKey = "auth-token";
 
-  var useHttps = true;
+  var useHttps = false;
 
   String path();
+
+  String getUserToken();
 
   bool needLogin();
 
   Map<String, String> params = {};
 
-  Map<String, String> header = {
-    'course-flag': 'fa',
-    'auth-token': 'ZmEtMjAyMS0wNC0wMiAyMToyMTo0Ni1mYQ==fa',
-  };
+  Map<String, String> header = {};
 
   // 请求方法
   HttpMethod method() {
     return HttpMethod.get;
   }
 
+  void httpOrHttps(bool useHttps) {
+    this.useHttps = useHttps;
+  }
+
+  Future<Map> doRequest({Map<String, dynamic>? params}) async {
+    params?.forEach((key, value) {
+      add(key, value);
+    });
+    Yldm.printLog(url());
+    return await YldmNet.getInstance().fire(this);
+  }
+
   // 接口
   // fixme 这里为了通用性，不应该直接写死，应该通过环境变量来配置
   String authority() {
-    return "api.devio.org";
+    return "127.0.0.1:8005";
   }
 
   // 拼接url
@@ -51,11 +64,7 @@ abstract class BaseRequest {
     }
 
     if (needLogin()) {
-      // fixme 这里为了通用性，不应该直接依赖登录模块,应该通过拦截器来实现
-      addHeader(
-        LoginService.boardingPass,
-        LoginService.getBoardingPass() ?? "",
-      );
+      addHeader(tokenKey, getUserToken());
     }
     return uri;
   }

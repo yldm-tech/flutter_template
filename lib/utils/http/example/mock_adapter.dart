@@ -1,5 +1,5 @@
-import 'package:bilibili/utils/http/core/yldm_net_adapter.dart';
-import 'package:bilibili/utils/http/request/base_request.dart';
+import 'package:bilibili/utils/http/base_request.dart';
+import 'package:bilibili/utils/http/yldm_net_adapter.dart';
 
 class MockAdapter extends YldmNetAdapter {
   @override

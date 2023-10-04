@@ -1,12 +1,12 @@
-import 'package:bilibili/utils/http/core/yldm_error.dart';
-import 'package:bilibili/utils/http/core/yldm_net_adapter.dart';
-import 'package:bilibili/utils/http/request/base_request.dart';
+import 'package:bilibili/utils/http/base_request.dart';
+import 'package:bilibili/utils/http/yldm_error.dart';
+import 'package:bilibili/utils/http/yldm_net_adapter.dart';
 import 'package:dio/dio.dart';
 
 class DioAdapter extends YldmNetAdapter {
   @override
   Future<HiNetResponse<T>> send<T>(BaseRequest request) async {
-    Response<dynamic>? response;
+    Response? response;
     var option = Options(headers: request.header);
     DioException? error;
     try {
@@ -52,13 +52,27 @@ class DioAdapter extends YldmNetAdapter {
     }
 
     if (error != null) {
-      throw HiNetError(response?.statusCode ?? -1, error.toString(),
-          data: buildRes<T>(response, request));
+      switch (response?.statusCode) {
+        case 401:
+          throw NeedAuth(response?.data['msg']);
+        case 403:
+          throw NeedLogin(response?.data['msg']);
+        case 408:
+          throw NetworkError('network error');
+        case 500:
+          print(response);
+        default:
+          throw HiNetError(
+            response?.statusCode ?? 500,
+            error.toString(),
+            data: buildRes<T>(response, request),
+          );
+      }
     }
     return buildRes(response, request);
   }
 
-  buildRes<T>(Response? response, BaseRequest request) {
+  HiNetResponse<T> buildRes<T>(Response? response, BaseRequest request) {
     return HiNetResponse(
       data: response?.data,
       request: request,
