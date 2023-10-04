@@ -1,4 +1,5 @@
 import 'package:bilibili/pages/login_page.dart';
+import 'package:bilibili/utils/color.dart';
 import 'package:bilibili/utils/db/yldm_cache.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData.dark(),
       home: const LoginPage(),
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
+        primarySwatch: YldmColor.white,
         useMaterial3: true,
       ),
     );
