@@ -1,6 +1,5 @@
 import 'package:bilibili/utils/db/yldm_cache.dart';
 import 'package:bilibili/utils/http/base_request.dart';
-import 'package:bilibili/utils/yldm.dart';
 
 class LoginRequest extends BaseRequest {
   @override
@@ -16,11 +15,6 @@ class LoginRequest extends BaseRequest {
   @override
   String path() {
     return "user/login";
-  }
-
-  @override
-  String getUserToken() {
-    return Yldm.getUserToken(tokenKey);
   }
 
   @override

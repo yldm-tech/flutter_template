@@ -1,5 +1,3 @@
-import 'package:bilibili/utils/yldm.dart';
-
 import '../utils/http/base_request.dart';
 
 class NoticeRequest extends BaseRequest {
@@ -16,10 +14,5 @@ class NoticeRequest extends BaseRequest {
   @override
   String path() {
     return "/notice";
-  }
-
-  @override
-  String getUserToken() {
-    return Yldm.getUserToken(tokenKey);
   }
 }

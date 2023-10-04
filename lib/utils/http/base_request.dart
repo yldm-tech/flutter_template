@@ -7,13 +7,12 @@ enum HttpMethod { get, post, put, delete, patch }
 /// https://api.devio.org/uapi/swagger-ui.html
 abstract class BaseRequest<T> {
   String? pathParams;
-  String tokenKey = "auth-token";
+  String tokenKey = "authorization";
 
   var useHttps = false;
 
   String path();
 
-  String getUserToken();
 
   bool needLogin();
 
@@ -28,6 +27,10 @@ abstract class BaseRequest<T> {
 
   void httpOrHttps(bool useHttps) {
     this.useHttps = useHttps;
+  }
+
+  String? getUserToken() {
+    return Yldm.getUserToken(tokenKey);
   }
 
   Future<Map> doRequest({Map<String, dynamic>? params}) async {
@@ -64,7 +67,7 @@ abstract class BaseRequest<T> {
     }
 
     if (needLogin()) {
-      addHeader(tokenKey, getUserToken());
+      addHeader(tokenKey, 'Bearer ${getUserToken()}');
     }
     return uri;
   }
