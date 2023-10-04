@@ -1,5 +1,5 @@
 import 'package:bilibili/application.dart';
-import 'package:bilibili/pages/login_page.dart';
+import 'package:bilibili/pages/navigator_page.dart';
 import 'package:bilibili/routers/routes.dart';
 import 'package:bilibili/utils/cache/yldm_cache.dart';
 import 'package:bilibili/utils/yldm/color_util.dart';
@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
-      home: const LoginPage(),
+      home: const NavigatorPage(),
       theme: ThemeData(
         primarySwatch: YldmColor.white,
         useMaterial3: true,
