@@ -1,6 +1,6 @@
+import 'package:bilibili/pages/login_page.dart';
 import 'package:bilibili/utils/db/yldm_cache.dart';
 import 'package:flutter/material.dart';
-import 'package:bilibili/pages/home/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
-      home: const HomePage(),
+      home: const LoginPage(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
         useMaterial3: true,
