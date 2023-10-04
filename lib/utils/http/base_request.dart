@@ -1,5 +1,5 @@
 import 'package:bilibili/utils/http/yldm_net.dart';
-import 'package:bilibili/utils/yldm.dart';
+import 'package:bilibili/utils/yldm/yldm_util.dart';
 
 enum HttpMethod { get, post, put, delete, patch }
 
@@ -12,7 +12,6 @@ abstract class BaseRequest<T> {
   var useHttps = false;
 
   String path();
-
 
   bool needLogin();
 

@@ -3,7 +3,7 @@ import 'package:bilibili/utils/http/dio_adapter.dart';
 import 'package:bilibili/utils/http/http_adapter.dart';
 import 'package:bilibili/utils/http/yldm_error.dart';
 import 'package:bilibili/utils/http/yldm_net_adapter.dart';
-import 'package:bilibili/utils/yldm.dart';
+import 'package:bilibili/utils/yldm/yldm_util.dart';
 
 class YldmNet {
   YldmNet._();

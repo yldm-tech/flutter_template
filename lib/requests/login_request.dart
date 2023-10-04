@@ -1,4 +1,4 @@
-import 'package:bilibili/utils/db/yldm_cache.dart';
+import 'package:bilibili/utils/cache/yldm_cache.dart';
 import 'package:bilibili/utils/http/base_request.dart';
 
 class LoginRequest extends BaseRequest {

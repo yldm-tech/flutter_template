@@ -1,5 +1,5 @@
 import 'package:bilibili/utils/http/base_request.dart';
-import 'package:bilibili/utils/yldm.dart';
+import 'package:bilibili/utils/yldm/yldm_util.dart';
 
 class RegisterRequest extends BaseRequest {
   @override

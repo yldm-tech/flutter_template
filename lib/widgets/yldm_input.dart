@@ -1,4 +1,4 @@
-import 'package:bilibili/utils/color.dart';
+import 'package:bilibili/utils/yldm/color_util.dart';
 import 'package:flutter/material.dart';
 
 class LoginInput extends StatefulWidget {
@@ -53,7 +53,7 @@ class _LoginInputState extends State<LoginInput> {
       children: [
         Row(
           children: [
-            Container(
+            SizedBox(
               width: 80,
               child: Text(
                 widget.title,

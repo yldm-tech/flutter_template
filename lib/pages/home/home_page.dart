@@ -1,11 +1,10 @@
-import 'package:bilibili/requests/login_request.dart';
+import 'package:bilibili/application.dart';
 import 'package:bilibili/requests/notice_request.dart';
-import 'package:bilibili/requests/register_request.dart';
-import 'package:bilibili/utils/db/yldm_cache.dart';
+import 'package:bilibili/utils/cache/yldm_cache.dart';
 import 'package:bilibili/utils/http/example/test_request.dart';
 import 'package:bilibili/utils/http/yldm_error.dart';
 import 'package:bilibili/utils/http/yldm_net.dart';
-import 'package:bilibili/utils/yldm.dart';
+import 'package:bilibili/utils/yldm/yldm_util.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -32,35 +31,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   void testRegister() async {
-    try {
-      var result = await RegisterRequest().doRequest(params: {
-        "username": "yldm",
-        "password": "12345",
-      });
-      Yldm.printLog(result);
-    } on NeedLogin catch (e) {
-      Yldm.printLog('needLogin: $e');
-    } on NeedAuth catch (e) {
-      Yldm.printLog('needAuth: $e');
-    } on HiNetError catch (e) {
-      Yldm.printLog('hiNetError: $e');
-    }
+    Application.router.navigateTo(context, '/register');
   }
 
   void testLogin() async {
-    try {
-      var result = await LoginRequest()
-          .doRequest(params: {"username": "yldm", "password": "12345"});
-      Yldm.printLog(result);
-    } on NotFound catch (e) {
-      Yldm.printLog('needLogin: $e');
-    } on NeedLogin catch (e) {
-      Yldm.printLog('needLogin: $e');
-    } on NeedAuth catch (e) {
-      Yldm.printLog('needAuth: $e');
-    } on HiNetError catch (e) {
-      Yldm.printLog('hiNetError: $e');
-    }
+    Application.router.navigateTo(context, '/login');
   }
 
   void testNotice() async {
