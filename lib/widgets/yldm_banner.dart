@@ -8,7 +8,7 @@ class BannerModel {
   final String cover;
   final String url;
 
-  const BannerModel({this.title = '', required this.cover, this.url = ''});
+  const BannerModel({required this.cover, this.title = '', this.url = ''});
 }
 
 /// banner组件
