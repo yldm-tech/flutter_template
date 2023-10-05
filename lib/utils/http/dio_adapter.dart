@@ -60,7 +60,6 @@ class DioAdapter extends YldmNetAdapter {
         case 408:
           throw NetworkError('network error');
         case 500:
-          print(response);
         default:
           throw HiNetError(
             response?.statusCode ?? 500,

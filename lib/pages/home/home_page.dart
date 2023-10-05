@@ -67,7 +67,7 @@ class _HomePageState extends YldmState<HomePage> {
                           borderRadius: BorderRadius.circular(16),
                           child: Container(
                               padding:
-                                  const EdgeInsets.only(left: 10, right: 10),
+                              const EdgeInsets.only(left: 10, right: 10),
                               height: 32,
                               alignment: Alignment.centerLeft,
                               decoration: BoxDecoration(
@@ -110,6 +110,7 @@ class _HomePageState extends YldmState<HomePage> {
                     ),
                   );
                 }).toList()),
+
           ],
         ),
       ),

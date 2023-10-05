@@ -34,7 +34,6 @@ class _LoginPageState extends YldmState<LoginPage> {
         loginEnable = false;
       });
     }
-    print(loginEnable);
   }
 
   @override
