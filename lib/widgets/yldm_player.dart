@@ -1,3 +1,5 @@
+import 'package:bilibili/utils/yldm/color_util.dart';
+import 'package:bilibili/widgets/yldm_cached_network_image.dart';
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -14,13 +16,15 @@ class YldmVideoPlayer extends StatefulWidget {
   final bool allowFullScreen;
   final double aspectRatio;
 
-  const YldmVideoPlayer(this.url,
-      {super.key,
-      required this.cover,
-      this.autoPlay = false,
-      this.looping = false,
-      this.allowFullScreen = true,
-      this.aspectRatio = 16 / 9});
+  const YldmVideoPlayer(
+    this.url, {
+    required this.cover,
+    this.autoPlay = false,
+    this.looping = false,
+    this.allowFullScreen = true,
+    this.aspectRatio = 16 / 9,
+    super.key,
+  });
 
   @override
   State<YldmVideoPlayer> createState() => _YldmVideoPlayerState();
@@ -48,10 +52,19 @@ class _YldmVideoPlayerState extends State<YldmVideoPlayer> {
       autoPlay: widget.autoPlay,
       looping: widget.looping,
       allowFullScreen: widget.allowFullScreen,
-      placeholder: Container(
-        color: Colors.grey,
+      allowMuting: true,
+      materialProgressColors: ChewieProgressColors(
+        playedColor: YldmColor.primary,
+        handleColor: YldmColor.primary,
+        backgroundColor: Colors.grey,
+        bufferedColor: YldmColor.primary[50]!,
       ),
-      // autoInitialize: true,
+      placeholder: FractionallySizedBox(
+        widthFactor: 1,
+        child: YldmCachedNetworkImage(
+          url: widget.cover,
+        ),
+      ),
     );
   }
 
