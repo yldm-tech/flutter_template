@@ -14,8 +14,12 @@ class _RankPageState extends YldmState<RankPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: YldmBanner(
-        bannerList: bannerDemoData,
+      child: Column(
+        children: [
+          YldmBanner(
+            bannerList: bannerDemoData,
+          ),
+        ],
       ),
     ));
   }
