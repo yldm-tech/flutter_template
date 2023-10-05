@@ -1,3 +1,4 @@
+import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:bilibili/widgets/yldm_tab.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends YldmState<HomePage> {
   var tabs = [
     '推荐',
     '热门',

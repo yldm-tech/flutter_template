@@ -2,6 +2,7 @@ import 'package:bilibili/pages/favorite/favorite_page.dart';
 import 'package:bilibili/pages/home/home_page.dart';
 import 'package:bilibili/pages/my/my_page.dart';
 import 'package:bilibili/pages/rank/rank_page.dart';
+import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:bilibili/utils/yldm/color_util.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class NavigatorPage extends StatefulWidget {
   State<NavigatorPage> createState() => _NavigatorPageState();
 }
 
-class _NavigatorPageState extends State<NavigatorPage> {
+class _NavigatorPageState extends YldmState<NavigatorPage> {
   PageController controller = PageController(initialPage: 0);
   final _defaultColor = Colors.grey;
   final _activeColor = YldmColor.primary;

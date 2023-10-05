@@ -1,3 +1,4 @@
+import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:flutter/material.dart';
 
 class MyPage extends StatefulWidget {
@@ -7,7 +8,7 @@ class MyPage extends StatefulWidget {
   State<MyPage> createState() => _MyPageState();
 }
 
-class _MyPageState extends State<MyPage> {
+class _MyPageState extends YldmState<MyPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

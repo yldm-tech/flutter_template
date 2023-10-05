@@ -1,3 +1,4 @@
+import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:bilibili/utils/yldm/color_util.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class YldmButton extends StatefulWidget {
   State<YldmButton> createState() => _YldmButtonState();
 }
 
-class _YldmButtonState extends State<YldmButton> {
+class _YldmButtonState extends YldmState<YldmButton> {
   @override
   Widget build(BuildContext context) {
     return Padding(

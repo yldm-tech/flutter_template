@@ -1,3 +1,4 @@
+import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:flutter/material.dart';
 
 class YldmTab extends StatefulWidget {
@@ -10,7 +11,7 @@ class YldmTab extends StatefulWidget {
   State<YldmTab> createState() => _YldmTabState();
 }
 
-class _YldmTabState extends State<YldmTab>
+class _YldmTabState extends YldmState<YldmTab>
     with AutomaticKeepAliveClientMixin, TickerProviderStateMixin {
   late TabController tabController;
 
@@ -18,6 +19,12 @@ class _YldmTabState extends State<YldmTab>
   void initState() {
     super.initState();
     tabController = TabController(length: widget.tabs.length, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    tabController.dispose();
   }
 
   @override

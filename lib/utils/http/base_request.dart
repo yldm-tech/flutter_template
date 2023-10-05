@@ -36,7 +36,7 @@ abstract class BaseRequest<T> {
     params?.forEach((key, value) {
       add(key, value);
     });
-    Yldm.printLog(url());
+    Yldm.log(url());
     return await YldmNet.getInstance().fire(this);
   }
 

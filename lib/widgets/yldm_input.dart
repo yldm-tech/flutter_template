@@ -1,3 +1,4 @@
+import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:bilibili/utils/yldm/color_util.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,7 @@ class LoginInput extends StatefulWidget {
   State<LoginInput> createState() => _LoginInputState();
 }
 
-class _LoginInputState extends State<LoginInput> {
+class _LoginInputState extends YldmState<LoginInput> {
   final FocusNode _focusNode = FocusNode();
 
   @override

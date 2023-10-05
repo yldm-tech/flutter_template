@@ -1,3 +1,4 @@
+import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:flutter/material.dart';
 
 class LoginEffect extends StatefulWidget {
@@ -9,7 +10,7 @@ class LoginEffect extends StatefulWidget {
   State<LoginEffect> createState() => _LoginEffectState();
 }
 
-class _LoginEffectState extends State<LoginEffect> {
+class _LoginEffectState extends YldmState<LoginEffect> {
   @override
   Widget build(BuildContext context) {
     return Container(

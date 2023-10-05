@@ -1,3 +1,5 @@
+import 'package:bilibili/utils/state/yldm_state.dart';
+import 'package:bilibili/widgets/yldm_banner.dart';
 import 'package:flutter/material.dart';
 
 class RankPage extends StatefulWidget {
@@ -7,12 +9,14 @@ class RankPage extends StatefulWidget {
   State<RankPage> createState() => _RankPageState();
 }
 
-class _RankPageState extends State<RankPage> {
+class _RankPageState extends YldmState<RankPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: Center(
-      child: Text('Rank Page'),
+    return Scaffold(
+        body: SafeArea(
+      child: YldmBanner(
+        bannerList: bannerDemoData,
+      ),
     ));
   }
 }

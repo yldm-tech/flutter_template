@@ -1,6 +1,7 @@
 import 'package:bilibili/application.dart';
 import 'package:bilibili/requests/login_request.dart';
 import 'package:bilibili/routers/routes.dart';
+import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:bilibili/utils/yldm/string_util.dart';
 import 'package:bilibili/widgets/login_effect.dart';
 import 'package:bilibili/widgets/yldm_appbar.dart';
@@ -15,7 +16,7 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends YldmState<LoginPage> {
   var isPassword = false;
   String username = '';
   String password = '';
