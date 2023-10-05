@@ -3,6 +3,19 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+/// 瀑布流组件示例数据
+/// 依赖于 https://pub.dev/packages/flutter_staggered_grid_view
+/// 如果这个库不好用了，可以考虑换一个更好用的
+final List<YldmGridViewItem> gridDemoList = List.generate(
+  200,
+  (index) => YldmGridViewItem(
+      id: index,
+      title: "Item $index",
+      height: Random().nextInt(150) + 50.5,
+      color: Color.fromARGB(Random().nextInt(256), Random().nextInt(256),
+          Random().nextInt(256), Random().nextInt(256))),
+);
+
 class YldmGridViewItem {
   final int id;
   final String title;
@@ -16,19 +29,6 @@ class YldmGridViewItem {
     required this.color, // 背景颜色
   });
 }
-
-/// 瀑布流组件示例数据
-/// 依赖于 https://pub.dev/packages/flutter_staggered_grid_view
-/// 如果这个库不好用了，可以考虑换一个更好用的
-final List<YldmGridViewItem> gridDemoList = List.generate(
-  200,
-  (index) => YldmGridViewItem(
-      id: index,
-      title: "Item $index",
-      height: Random().nextInt(150) + 50.5,
-      color: Color.fromARGB(Random().nextInt(256), Random().nextInt(256),
-          Random().nextInt(256), Random().nextInt(256))),
-);
 
 class YldmGridView extends StatefulWidget {
   final List<YldmGridViewItem> items; // 数据
