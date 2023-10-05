@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+/// 动画容器
+/// 具体内容放在child中
+/// https://lottiefiles.com/animation/loading
+/// 可以随时替换动画
 class YldmLoadingContainer extends StatelessWidget {
-  final Widget child;
-  final bool isLoading;
-  final bool isGlobal;
+  final Widget child; // 具体内容
+  final bool isLoading; // 是否显示动画
+  final bool isGlobal; // 是否全局动画
   const YldmLoadingContainer({
     super.key,
     required this.child,
