@@ -44,20 +44,20 @@ class _MyPageState extends YldmState<MyPage> {
             children: [
               TextButton(
                 onPressed: () async {
-                  var path = await YldmDownloader.getInstance().download(
+                  YldmDownloader.getInstance().download(
                       url:
                           "https://redirector.gvt1.com/edgedl/android/studio/install/2022.3.1.20/android-studio-2022.3.1.20-mac_arm.dmg",
                       filename: "android-studio-2022.3.1.20-mac_arm.dmg",
-                      listener: (totalM, receivedM, done) {
+                      listener: (totalM, receivedM, done, path) {
                         setState(() {
                           total = totalM;
                           received = receivedM;
                           isDone = done;
                         });
-                        YldmUtil.log(
-                            "total: $total M, received: $received M, done: $done");
+                        if (path != null) {
+                          YldmUtil.log(path);
+                        }
                       });
-                  YldmUtil.log(path);
                 },
                 child: const Text("下载"),
               ),
@@ -67,7 +67,7 @@ class _MyPageState extends YldmState<MyPage> {
                 },
                 child: const Text("取消"),
               ),
-              downloadProcess(received, total),
+              downloadProcess(received: received, total: total),
               Text("进度: ${received}M/${total}M"),
               // Center(
               //   child: YldmCachedNetworkImage(
