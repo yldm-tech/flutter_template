@@ -22,6 +22,8 @@ dependencies:
   chewie: ^1.7.1
   video_player: ^2.7.2
   web_socket_channel: ^2.4.0
+  path_provider: ^2.1.1
+  getwidget: ^4.0.0
 
 dev_dependencies:
   flutter_test:

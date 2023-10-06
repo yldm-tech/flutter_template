@@ -1,5 +1,5 @@
+import 'package:bilibili/utils/http/yldm_downloader.dart';
 import 'package:bilibili/utils/socket/socket.dart';
-import 'package:bilibili/utils/socket/yldm_socket.dart';
 import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:bilibili/utils/yldm/yldm_util.dart';
 import 'package:bilibili/widgets/yldm_loading_container.dart';
@@ -16,13 +16,17 @@ class _MyPageState extends YldmState<MyPage> {
   bool isLoading = false;
   late ISocket socket;
 
+  bool isDone = false;
+  int total = 0;
+  int received = 0;
+
   @override
   void initState() {
     super.initState();
-    socket = YldmSocket("wss://api.yldm.tech/socket:443").open("123");
-    socket.listen((value) {
-      YldmUtil.log(value);
-    });
+    // socket = YldmSocket("wss://api.yldm.tech/socket").open("123");
+    // socket.listen((value) {
+    //   YldmUtil.log(value);
+    // });
   }
 
   @override
@@ -36,8 +40,35 @@ class _MyPageState extends YldmState<MyPage> {
     return Scaffold(
       body: YldmLoadingContainer(
           isLoading: isLoading,
-          child: const Column(
+          child: Column(
             children: [
+              TextButton(
+                onPressed: () async {
+                  var path = await YldmDownloader.getInstance().download(
+                      url:
+                          "https://redirector.gvt1.com/edgedl/android/studio/install/2022.3.1.20/android-studio-2022.3.1.20-mac_arm.dmg",
+                      filename: "android-studio-2022.3.1.20-mac_arm.dmg",
+                      listener: (totalM, receivedM, done) {
+                        setState(() {
+                          total = totalM;
+                          received = receivedM;
+                          isDone = done;
+                        });
+                        YldmUtil.log(
+                            "total: $total M, received: $received M, done: $done");
+                      });
+                  YldmUtil.log(path);
+                },
+                child: const Text("下载"),
+              ),
+              TextButton(
+                onPressed: () async {
+                  await YldmDownloader.getInstance().cancel();
+                },
+                child: const Text("取消"),
+              ),
+              downloadProcess(received, total),
+              Text("进度: ${received}M/${total}M"),
               // Center(
               //   child: YldmCachedNetworkImage(
               //       url: "https://static.yldm.tech/uPic/bilibili/banner3.png"),
