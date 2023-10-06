@@ -1,11 +1,17 @@
 import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:flutter/material.dart';
 
-class YldmTab extends StatefulWidget {
-  final List<String> tabs;
-  final List<Widget> views;
+class YldmTabItem {
+  final String tabTitle;
+  final Widget child;
 
-  const YldmTab({super.key, required this.tabs, required this.views});
+  YldmTabItem(this.tabTitle, this.child);
+}
+
+class YldmTab extends StatefulWidget {
+  final List<YldmTabItem> tabs;
+
+  const YldmTab({super.key, required this.tabs});
 
   @override
   State<YldmTab> createState() => _YldmTabState();
@@ -45,7 +51,7 @@ class _YldmTabState extends YldmState<YldmTab>
               ),
               tabs: widget.tabs.map<Tab>((tab) {
                 return Tab(
-                  text: tab,
+                  text: tab.tabTitle,
                 );
               }).toList(),
             ),
@@ -53,7 +59,9 @@ class _YldmTabState extends YldmState<YldmTab>
           Flexible(
               child: TabBarView(
             controller: tabController,
-            children: widget.views,
+            children: widget.tabs.map<Widget>((tab) {
+              return tab.child;
+            }).toList(),
           ))
         ],
       ),
@@ -63,3 +71,20 @@ class _YldmTabState extends YldmState<YldmTab>
   @override
   bool get wantKeepAlive => true;
 }
+
+var demoTabs = [
+  YldmTabItem('推荐', const Text('推荐')),
+  YldmTabItem('热门', const Text('热门')),
+  YldmTabItem('番剧', const Text('番剧')),
+  YldmTabItem('影视', const Text('影视')),
+  YldmTabItem('时尚', const Text('时尚')),
+  YldmTabItem('电台', const Text('电台')),
+  YldmTabItem('国创', const Text('国创')),
+  YldmTabItem('直播', const Text('直播')),
+  YldmTabItem('相簿', const Text('相簿')),
+  YldmTabItem('游戏中心', const Text('游戏中心')),
+  YldmTabItem('话题中心', const Text('话题中心')),
+  YldmTabItem('专栏', const Text('专栏')),
+  YldmTabItem('活动中心', const Text('活动中心')),
+  YldmTabItem('课堂', const Text('课堂')),
+];

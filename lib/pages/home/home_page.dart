@@ -1,6 +1,25 @@
+import 'package:bilibili/pages/examples/accordion_page.dart';
+import 'package:bilibili/pages/examples/alert_page.dart';
+import 'package:bilibili/pages/examples/animation_page.dart';
+import 'package:bilibili/pages/examples/avatar_page.dart';
+import 'package:bilibili/pages/examples/badge_page.dart';
+import 'package:bilibili/pages/examples/border_page.dart';
+import 'package:bilibili/pages/examples/bottom_sheet_page.dart';
+import 'package:bilibili/pages/examples/button_page.dart';
+import 'package:bilibili/pages/examples/card_page.dart';
+import 'package:bilibili/pages/examples/checkbox_page.dart';
+import 'package:bilibili/pages/examples/drobox_page.dart';
+import 'package:bilibili/pages/examples/example_typography.dart';
+import 'package:bilibili/pages/examples/intro_screen_page.dart';
+import 'package:bilibili/pages/examples/loading_page.dart';
+import 'package:bilibili/pages/examples/photo_page.dart';
+import 'package:bilibili/pages/examples/processer_page.dart';
+import 'package:bilibili/pages/examples/radio_box_page.dart';
+import 'package:bilibili/pages/examples/rating_page.dart';
+import 'package:bilibili/pages/examples/search_box_page.dart';
+import 'package:bilibili/pages/examples/slider_page.dart';
+import 'package:bilibili/pages/examples/switch_page.dart';
 import 'package:bilibili/utils/state/yldm_state.dart';
-import 'package:bilibili/widgets/yldm_banner.dart';
-import 'package:bilibili/widgets/yldm_navigation_bar.dart';
 import 'package:bilibili/widgets/yldm_tab.dart';
 import 'package:flutter/material.dart';
 
@@ -12,108 +31,38 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends YldmState<HomePage> {
-  var tabs = [
-    '推荐',
-    '热门',
-    '番剧',
-    '影视',
-    '时尚',
-    '电台',
-    '国创',
-    '直播',
-    '相簿',
-    '游戏中心',
-    '话题中心',
-    '专栏',
-    '活动中心',
-    '课堂'
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          children: [
-            YldmNavigationBar(
-              color: Colors.white,
-              height: 50,
-              style: StatusStyle.dark,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30),
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          color: Colors.grey[200],
-                          child: const Image(
-                            height: 30,
-                            width: 30,
-                            image: AssetImage('assets/images/bilibili.png'),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10, right: 10),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(16),
-                          child: Container(
-                              padding:
-                              const EdgeInsets.only(left: 10, right: 10),
-                              height: 32,
-                              alignment: Alignment.centerLeft,
-                              decoration: BoxDecoration(
-                                color: Colors.grey[200],
-                              ),
-                              child: const Icon(
-                                Icons.search,
-                                color: Colors.grey,
-                              )),
-                        ),
-                      ),
-                    ),
-                    const Icon(
-                      Icons.explore_outlined,
-                      color: Colors.grey,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 5, right: 5),
-                      child: Icon(
-                        Icons.mail_outline,
-                        color: Colors.grey,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            YldmTab(
-                tabs: tabs,
-                views: tabs.map((tab) {
-                  return Container(
-                    alignment: Alignment.center,
-                    child: Column(
-                      children: [
-                        YldmBanner(
-                          bannerList: bannerDemoData,
-                          padding: const EdgeInsets.all(10),
-                        ),
-                      ],
-                    ),
-                  );
-                }).toList()),
-
-          ],
+          children: [YldmTab(tabs: tabs)],
         ),
       ),
     );
   }
 }
+
+var tabs = [
+  YldmTabItem("按钮", const ExampleButtonPage()),
+  YldmTabItem("徽章", const ExampleBadgePage()),
+  YldmTabItem("头像", const ExampleAvatarPage()),
+  YldmTabItem("照片", const ExamplePhotoPage()),
+  YldmTabItem("卡片", const ExampleCardPage()),
+  YldmTabItem("轮播", const ExampleSliderPage()),
+  YldmTabItem("开关", const ExampleSwitchPage()),
+  YldmTabItem("版式", const ExampleTypographyPage()),
+  YldmTabItem("手风琴", const ExampleAccordionPage()),
+  YldmTabItem("对话框", const ExampleAlertPage()),
+  YldmTabItem("搜索框", const ExampleSearchBoxPage()),
+  YldmTabItem("评分", const ExampleRatingPage()),
+  YldmTabItem("下拉框", const ExampleDropBoxPage()),
+  YldmTabItem("加载动画", const ExampleLoadingPage()),
+  YldmTabItem("进度条", const ExampleProcessorPage()),
+  YldmTabItem("动画", const ExampleAnimationPage()),
+  YldmTabItem("边框", const ExampleBorderPage()),
+  YldmTabItem("底部弹窗", const ExampleBottomSheetPage()),
+  YldmTabItem("单选框", const ExampleCheckBoxPage()),
+  YldmTabItem("多选框", const ExampleRadioPage()),
+  YldmTabItem("引导页", const ExampleIntroPage()),
+];
