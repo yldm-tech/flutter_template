@@ -47,7 +47,7 @@ class _MyPageState extends YldmState<MyPage> {
                   YldmDownloader.getInstance().download(
                       url:
                           "https://redirector.gvt1.com/edgedl/android/studio/install/2022.3.1.20/android-studio-2022.3.1.20-mac_arm.dmg",
-                      filename: "android-studio-2022.3.1.20-mac_arm.dmg",
+                      // filename: "android-studio-2022.3.1.20-mac_arm.dmg",
                       listener: (totalM, receivedM, done, path) {
                         setState(() {
                           total = totalM;

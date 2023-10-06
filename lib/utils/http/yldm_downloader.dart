@@ -57,7 +57,7 @@ class YldmDownloader {
       if (listener != null) {
         listener(total, received, false, null);
       }
-      YldmUtil.log('download progress: ${received}M/${total}M');
+      YldmUtil.log('download $filename progress: ${received}M/${total}M');
     }).onDone(() async {
       var total = (_total / 1024 / 1024).floor();
       var received = (_received / 1024 / 1024).floor();
