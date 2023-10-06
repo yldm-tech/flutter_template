@@ -29,14 +29,14 @@ abstract class BaseRequest<T> {
   }
 
   String? getUserToken() {
-    return Yldm.getUserToken(tokenKey);
+    return YldmUtil.getUserToken(tokenKey);
   }
 
   Future<Map> doRequest({Map<String, dynamic>? params}) async {
     params?.forEach((key, value) {
       add(key, value);
     });
-    Yldm.log(url());
+    YldmUtil.log(url());
     return await YldmNet.getInstance().fire(this);
   }
 

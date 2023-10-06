@@ -18,9 +18,8 @@ class YldmLoadingContainer extends StatelessWidget {
 
   loading() {
     return isLoading
-        ? Center(
-            child: Lottie.asset('assets/lottie/loading.json'),
-          )
+        ? SafeArea(
+            child: Center(child: Lottie.asset('assets/lottie/loading.json')))
         : Container();
   }
 
@@ -34,7 +33,7 @@ class YldmLoadingContainer extends StatelessWidget {
         ],
       );
     } else {
-      return isLoading ? loading() : child;
+      return isLoading ? loading() : SafeArea(child: child);
     }
   }
 }

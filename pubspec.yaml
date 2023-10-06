@@ -21,6 +21,7 @@ dependencies:
   lottie: ^2.6.0
   chewie: ^1.7.1
   video_player: ^2.7.2
+  web_socket_channel: ^2.4.0
 
 dev_dependencies:
   flutter_test:

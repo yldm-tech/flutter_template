@@ -54,7 +54,7 @@ class _YldmBannerState extends YldmState<YldmBanner> {
                 if (widget.onTap != null) {
                   widget.onTap!();
                 }
-                Yldm.log('点击了第$index个banner');
+                YldmUtil.log('点击了第$index个banner');
               },
               child: ClipRRect(
                 clipBehavior: Clip.antiAlias,

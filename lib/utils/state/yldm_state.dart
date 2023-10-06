@@ -8,7 +8,7 @@ abstract class YldmState<T extends StatefulWidget> extends State<T> {
       fn();
       super.setState(fn);
     } else {
-      Yldm.log('setState() called after dispose(): $this');
+      YldmUtil.log('setState() called after dispose(): $this');
     }
   }
 }

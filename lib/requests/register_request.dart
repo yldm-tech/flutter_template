@@ -19,6 +19,6 @@ class RegisterRequest extends BaseRequest {
 
   @override
   String? getUserToken() {
-    return Yldm.getUserToken(tokenKey);
+    return YldmUtil.getUserToken(tokenKey);
   }
 }

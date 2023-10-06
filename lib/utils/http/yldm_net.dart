@@ -41,12 +41,12 @@ class YldmNet {
     } else {
       adapter = HttpAdapter();
     }
-    Yldm.log("url:${request.url()}");
-    Yldm.log("method:${request.method()}");
-    Yldm.log("header:${request.header}");
-    Yldm.log("params:${request.params}");
-    Yldm.log("pathParams:${request.pathParams}");
-    Yldm.log("needLogin:${request.needLogin()}");
+    YldmUtil.log("url:${request.url()}");
+    YldmUtil.log("method:${request.method()}");
+    YldmUtil.log("header:${request.header}");
+    YldmUtil.log("params:${request.params}");
+    YldmUtil.log("pathParams:${request.pathParams}");
+    YldmUtil.log("needLogin:${request.needLogin()}");
     return adapter.send(request);
   }
 }
