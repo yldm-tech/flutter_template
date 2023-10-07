@@ -21,6 +21,8 @@ class _ExampleAvatarPageState extends State<ExampleAvatarPage> {
         dotAvatar(),
         container('带数字头像'),
         numberAvatar(),
+        container("重叠头像"),
+        overlapAvatar(),
       ],
     );
   }
@@ -399,6 +401,158 @@ class _ExampleAvatarPageState extends State<ExampleAvatarPage> {
           ),
         )),
       ],
+    );
+  }
+
+  overlapAvatar() {
+    return SizedBox(
+      height: 100,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Positioned(
+            left: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(color: Colors.white, width: 1),
+              ),
+              child: const GFAvatar(
+                backgroundImage: NetworkImage(
+                    'https://static.yldm.tech/uPic/avatar/10020.jpg'),
+                shape: GFAvatarShape.circle,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 30,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(color: Colors.white, width: 1),
+              ),
+              child: const GFAvatar(
+                backgroundImage: NetworkImage(
+                    'https://static.yldm.tech/uPic/avatar/10021.jpg'),
+                shape: GFAvatarShape.circle,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 60,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(color: Colors.white, width: 1),
+              ),
+              child: const GFAvatar(
+                backgroundImage: NetworkImage(
+                    'https://static.yldm.tech/uPic/avatar/10022.jpg'),
+                shape: GFAvatarShape.circle,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 90,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(color: Colors.white, width: 1),
+              ),
+              child: const GFAvatar(
+                backgroundImage: NetworkImage(
+                    'https://static.yldm.tech/uPic/avatar/10023.jpg'),
+                shape: GFAvatarShape.circle,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 120,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(color: Colors.white, width: 1),
+              ),
+              child: const GFAvatar(
+                backgroundImage: NetworkImage(
+                    'https://static.yldm.tech/uPic/avatar/10024.jpg'),
+                shape: GFAvatarShape.circle,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 150,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(color: Colors.white, width: 1),
+              ),
+              child: const GFAvatar(
+                backgroundImage: NetworkImage(
+                    'https://static.yldm.tech/uPic/avatar/10025.jpg'),
+                shape: GFAvatarShape.circle,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 180,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(color: Colors.white, width: 1),
+              ),
+              child: const GFAvatar(
+                backgroundImage: NetworkImage(
+                    'https://static.yldm.tech/uPic/avatar/10020.jpg'),
+                shape: GFAvatarShape.circle,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 210,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(color: Colors.white, width: 1),
+              ),
+              child: const GFAvatar(
+                backgroundImage: NetworkImage(
+                    'https://static.yldm.tech/uPic/avatar/10021.jpg'),
+                shape: GFAvatarShape.circle,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 240,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(color: Colors.white, width: 1),
+              ),
+              child: const GFAvatar(
+                backgroundImage: NetworkImage(
+                    'https://static.yldm.tech/uPic/avatar/10022.jpg'),
+                shape: GFAvatarShape.circle,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 300,
+            child: Container(
+              alignment: Alignment.center,
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: Colors.blue[50]!,
+                border: Border.all(color: Colors.blue[100]!, width: 1),
+              ),
+              child: Text("+",
+                  style: TextStyle(fontSize: 25, color: Colors.blue[100]!)),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
