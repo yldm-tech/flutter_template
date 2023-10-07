@@ -267,14 +267,7 @@ class _ExampleBadgePageState extends State<ExampleBadgePage> {
         YldmContainer(
           child: GFIconBadge(
               position: GFBadgePosition.topEnd(top: 5, end: 0),
-              counterChild: Container(
-                width: 8,
-                height: 8,
-                decoration: const BoxDecoration(
-                  color: Colors.green,
-                  shape: BoxShape.circle,
-                ),
-              ),
+              counterChild: dot(Colors.green),
               child: GFButton(
                   child: const Text("success"),
                   onPressed: () => toast("success button"))),
@@ -282,14 +275,7 @@ class _ExampleBadgePageState extends State<ExampleBadgePage> {
         YldmContainer(
           child: GFIconBadge(
               position: GFBadgePosition.topEnd(top: 5, end: 0),
-              counterChild: Container(
-                width: 8,
-                height: 8,
-                decoration: const BoxDecoration(
-                  color: Colors.red,
-                  shape: BoxShape.circle,
-                ),
-              ),
+              counterChild: dot(Colors.red),
               child: GFButton(
                   child: const Text("danger"),
                   onPressed: () => toast("danger button"))),
@@ -297,14 +283,7 @@ class _ExampleBadgePageState extends State<ExampleBadgePage> {
         YldmContainer(
           child: GFIconBadge(
               position: GFBadgePosition.topEnd(top: 5, end: 0),
-              counterChild: Container(
-                width: 8,
-                height: 8,
-                decoration: const BoxDecoration(
-                  color: Colors.orange,
-                  shape: BoxShape.circle,
-                ),
-              ),
+              counterChild: dot(Colors.orange),
               child: GFButton(
                   child: const Text("warning"),
                   onPressed: () => toast("warning button"))),
@@ -312,14 +291,7 @@ class _ExampleBadgePageState extends State<ExampleBadgePage> {
         YldmContainer(
           child: GFIconBadge(
               position: GFBadgePosition.topEnd(top: 10, end: 10),
-              counterChild: Container(
-                width: 8,
-                height: 8,
-                decoration: const BoxDecoration(
-                  color: Colors.green,
-                  shape: BoxShape.circle,
-                ),
-              ),
+              counterChild: dot(Colors.green),
               child: GFButton(
                   color: GFColors.TRANSPARENT,
                   child: const Text("success",
@@ -329,14 +301,7 @@ class _ExampleBadgePageState extends State<ExampleBadgePage> {
         YldmContainer(
           child: GFIconBadge(
               position: GFBadgePosition.topEnd(top: 10, end: 10),
-              counterChild: Container(
-                width: 8,
-                height: 8,
-                decoration: const BoxDecoration(
-                  color: Colors.red,
-                  shape: BoxShape.circle,
-                ),
-              ),
+              counterChild: dot(Colors.red),
               child: GFButton(
                   color: GFColors.TRANSPARENT,
                   child: const Text("danger",
@@ -346,14 +311,7 @@ class _ExampleBadgePageState extends State<ExampleBadgePage> {
         YldmContainer(
           child: GFIconBadge(
               position: GFBadgePosition.topEnd(top: 10, end: 10),
-              counterChild: Container(
-                width: 8,
-                height: 8,
-                decoration: const BoxDecoration(
-                  color: Colors.orange,
-                  shape: BoxShape.circle,
-                ),
-              ),
+              counterChild: dot(Colors.orange),
               child: GFButton(
                   color: GFColors.TRANSPARENT,
                   child: const Text("warning",
