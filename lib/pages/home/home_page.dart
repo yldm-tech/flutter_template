@@ -12,8 +12,7 @@ import 'package:bilibili/pages/examples/drobox_page.dart';
 import 'package:bilibili/pages/examples/example_typography.dart';
 import 'package:bilibili/pages/examples/intro_screen_page.dart';
 import 'package:bilibili/pages/examples/loading_page.dart';
-import 'package:bilibili/pages/examples/photo_page.dart';
-import 'package:bilibili/pages/examples/processer_page.dart';
+import 'package:bilibili/pages/examples/processor_page.dart';
 import 'package:bilibili/pages/examples/radio_box_page.dart';
 import 'package:bilibili/pages/examples/rating_page.dart';
 import 'package:bilibili/pages/examples/search_box_page.dart';
@@ -47,7 +46,6 @@ var tabs = [
   YldmTabItem("按钮", const ExampleButtonPage()),
   YldmTabItem("徽章", const ExampleBadgePage()),
   YldmTabItem("头像", const ExampleAvatarPage()),
-  YldmTabItem("照片", const ExamplePhotoPage()),
   YldmTabItem("卡片", const ExampleCardPage()),
   YldmTabItem("轮播", const ExampleSliderPage()),
   YldmTabItem("开关", const ExampleSwitchPage()),
