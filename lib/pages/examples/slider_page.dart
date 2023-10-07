@@ -1,3 +1,4 @@
+import 'package:bilibili/widgets/yldm_banner.dart';
 import 'package:flutter/material.dart';
 
 class ExampleSliderPage extends StatefulWidget {
@@ -10,6 +11,10 @@ class ExampleSliderPage extends StatefulWidget {
 class _ExampleSliderPageState extends State<ExampleSliderPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        YldmBanner(bannerList: bannerDemoData),
+      ],
+    );
   }
 }
