@@ -1,5 +1,5 @@
 import 'package:bilibili/utils/state/yldm_state.dart';
-import 'package:bilibili/widgets/yldm_banner.dart';
+import 'package:bilibili/widgets/yldm_slider.dart';
 import 'package:flutter/material.dart';
 
 class RankPage extends StatefulWidget {
@@ -16,8 +16,8 @@ class _RankPageState extends YldmState<RankPage> {
         body: SafeArea(
       child: Column(
         children: [
-          YldmBanner(
-            bannerList: bannerDemoData,
+          YldmSlider(
+            sliderList: sliderDemoData,
           ),
         ],
       ),

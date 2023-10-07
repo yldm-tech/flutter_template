@@ -3,33 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
 class BannerModel {
-  final String title;
   final String cover;
   final String url;
 
-  const BannerModel({required this.cover, this.title = '', this.url = ''});
+  const BannerModel({required this.cover, this.url = ''});
 }
 
 /// banner组件
-class YldmBanner extends StatefulWidget {
-  final List<BannerModel> bannerList; // banner数据
-  final VoidCallback? onTap; // 点击事件
+class YldmSlider extends StatefulWidget {
+  final List<BannerModel> sliderList; // banner数据
   final bool autoPlay; // 是否自动播放
   final bool hasPagination;
 
-  const YldmBanner({
+  const YldmSlider({
     super.key,
-    required this.bannerList, // banner数据
+    required this.sliderList, // banner数据
     this.autoPlay = true, // 是否自动播放
     this.hasPagination = true,
-    this.onTap, // 点击事件
   });
 
   @override
-  State<YldmBanner> createState() => _YldmBannerState();
+  State<YldmSlider> createState() => _YldmSliderState();
 }
 
-class _YldmBannerState extends YldmState<YldmBanner> {
+class _YldmSliderState extends YldmState<YldmSlider> {
   @override
   Widget build(BuildContext context) {
     return GFCarousel(
@@ -39,35 +36,22 @@ class _YldmBannerState extends YldmState<YldmBanner> {
       activeIndicator: Colors.white,
       autoPlayCurve: Curves.fastOutSlowIn,
       autoPlayInterval: const Duration(seconds: 3),
-      items: bannerDemoData.map(
+      items: widget.sliderList.map(
         (data) {
-          return GestureDetector(
-            onTap: () {
-              if (widget.onTap != null) {
-                widget.onTap!();
-              }
-            },
-            child: Container(
-              margin: const EdgeInsets.all(8.0),
-              child: ClipRRect(
+          return Container(
+            margin: const EdgeInsets.all(8.0),
+            child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                child:
-                    Image.network(data.cover, fit: BoxFit.cover, width: 1000.0),
-              ),
-            ),
+                child: Image.network(data.cover,
+                    fit: BoxFit.cover, width: 1000.0)),
           );
         },
       ).toList(),
-      onPageChanged: (index) {
-        setState(() {
-          index;
-        });
-      },
     );
   }
 }
 
-List<BannerModel> bannerDemoData = [
+List<BannerModel> sliderDemoData = [
   const BannerModel(
     cover: 'https://static.yldm.tech/uPic/bilibili/banner1.png',
   ),

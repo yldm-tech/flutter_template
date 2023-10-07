@@ -1,4 +1,4 @@
-import 'package:bilibili/widgets/yldm_banner.dart';
+import 'package:bilibili/widgets/yldm_slider.dart';
 import 'package:flutter/material.dart';
 
 class ExampleSliderPage extends StatefulWidget {
@@ -13,7 +13,7 @@ class _ExampleSliderPageState extends State<ExampleSliderPage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        YldmBanner(bannerList: bannerDemoData),
+        YldmSlider(sliderList: sliderDemoData),
       ],
     );
   }
