@@ -924,7 +924,7 @@ class _ExampleButtonPageState extends State<ExampleButtonPage> {
 
   container(String title) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       alignment: Alignment.centerLeft,
       child: Text(
         title,

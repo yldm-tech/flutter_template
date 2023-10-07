@@ -62,7 +62,7 @@ class _YldmVideoPlayerState extends State<YldmVideoPlayer> {
       placeholder: FractionallySizedBox(
         widthFactor: 1,
         child: YldmCachedNetworkImage(
-          url: widget.cover,
+          widget.cover,
         ),
       ),
     );

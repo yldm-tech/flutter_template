@@ -11,9 +11,9 @@ class YldmCachedNetworkImage extends StatelessWidget {
   final Widget placeholder;
   final Widget errorWidget;
 
-  const YldmCachedNetworkImage({
+  const YldmCachedNetworkImage(
+    this.url, {
     super.key,
-    required this.url,
     this.placeholder = const CircularProgressIndicator(),
     this.errorWidget = const Icon(Icons.error, size: 200),
     this.width = 200,
