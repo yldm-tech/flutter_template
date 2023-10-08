@@ -16,13 +16,13 @@ class _ExampleCardPageState extends State<ExampleCardPage> {
     return ListView(
       children: const [
         YldmPoster(
-          avatar:
-              'https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_960_720.jpg',
+          avatar: NetworkImage(
+              'https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_960_720.jpg'),
           name: 'Game Controllers',
           desc: 'Game Controllers',
           poster: 'https://static.yldm.tech/uPic/bilibili/banner3.png',
           content:
-              'Some quick example text to build on the card title and make up the bulk of the card\'s content. Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+              'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
           buttonBar: GFButtonBar(
             children: <Widget>[
               GFAvatar(

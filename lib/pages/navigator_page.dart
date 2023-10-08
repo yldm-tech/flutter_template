@@ -1,7 +1,7 @@
 import 'package:bilibili/pages/favorite/favorite_page.dart';
 import 'package:bilibili/pages/home/home_page.dart';
 import 'package:bilibili/pages/my/my_page.dart';
-import 'package:bilibili/pages/rank/rank_page.dart';
+import 'package:bilibili/pages/plugins/plugin_page.dart';
 import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:bilibili/utils/yldm/color_util.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +41,7 @@ class _NavigatorPageState extends YldmState<NavigatorPage> {
               },
           items: [
             bottomItem('首页', Icons.home, 0),
-            bottomItem('排行', Icons.local_fire_department, 1),
+            bottomItem('插件', Icons.flutter_dash_rounded, 1),
             bottomItem('收藏', Icons.favorite, 2),
             bottomItem('我的', Icons.mood, 3),
           ]),
@@ -55,7 +55,7 @@ class _NavigatorPageState extends YldmState<NavigatorPage> {
         },
         children: const [
           HomePage(),
-          RankPage(),
+          PluginPage(),
           FavoritePage(),
           MyPage(),
         ],
