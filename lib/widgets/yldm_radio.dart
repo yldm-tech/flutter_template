@@ -22,7 +22,7 @@ class YldmRadio extends StatefulWidget {
 }
 
 class _YldmRadioState extends State<YldmRadio> {
-  int groupValue = 0;
+  int groupValue = 1;
 
   @override
   Widget build(BuildContext context) {
