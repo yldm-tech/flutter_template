@@ -419,10 +419,11 @@ packages:
   getwidget:
     dependency: "direct main"
     description:
-      name: getwidget
-      sha256: "91df14a8d80e21f3ec02759295b90cc8badb8a872b90d34ad4aeb4085d833b5c"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: dc9b44fe563fb4fa12f589fc770a727c39ebbb48
+      url: "https://github.com/ionicfirebaseapp/getwidget.git"
+    source: git
     version: "4.0.0"
   glob:
     dependency: transitive

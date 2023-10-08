@@ -1,3 +1,4 @@
+import 'package:bilibili/widgets/yldm_search_box.dart';
 import 'package:flutter/material.dart';
 
 class ExampleSearchBoxPage extends StatefulWidget {
@@ -10,6 +11,6 @@ class ExampleSearchBoxPage extends StatefulWidget {
 class _ExampleSearchBoxPageState extends State<ExampleSearchBoxPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const YldmSearchBox(items: ["a", "b", "c", "d", "e", "f", "g"]);
   }
 }
