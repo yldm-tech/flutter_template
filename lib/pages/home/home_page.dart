@@ -1,5 +1,4 @@
 import 'package:bilibili/pages/examples/accordion_page.dart';
-import 'package:bilibili/pages/examples/alert_page.dart';
 import 'package:bilibili/pages/examples/animation_page.dart';
 import 'package:bilibili/pages/examples/avatar_page.dart';
 import 'package:bilibili/pages/examples/badge_page.dart';
@@ -51,7 +50,6 @@ var tabs = [
   YldmTabItem("开关", const ExampleSwitchPage()),
   YldmTabItem("版式", const ExampleTypographyPage()),
   YldmTabItem("手风琴", const ExampleAccordionPage()),
-  YldmTabItem("对话框", const ExampleAlertPage()),
   YldmTabItem("搜索框", const ExampleSearchBoxPage()),
   YldmTabItem("评分", const ExampleRatingPage()),
   YldmTabItem("下拉框", const ExampleDropBoxPage()),
