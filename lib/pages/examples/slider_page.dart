@@ -14,6 +14,10 @@ class _ExampleSliderPageState extends State<ExampleSliderPage> {
     return Column(
       children: [
         YldmSlider(sliderList: sliderDemoData),
+        YldmSlider(
+          sliderList: sliderTextDemoData,
+          autoPlay: false,
+        ),
       ],
     );
   }

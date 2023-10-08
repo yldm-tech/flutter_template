@@ -7,7 +7,6 @@ import 'package:bilibili/pages/examples/bottom_sheet_page.dart';
 import 'package:bilibili/pages/examples/button_page.dart';
 import 'package:bilibili/pages/examples/card_page.dart';
 import 'package:bilibili/pages/examples/checkbox_page.dart';
-import 'package:bilibili/pages/examples/drobox_page.dart';
 import 'package:bilibili/pages/examples/example_typography.dart';
 import 'package:bilibili/pages/examples/intro_screen_page.dart';
 import 'package:bilibili/pages/examples/loading_page.dart';
@@ -52,7 +51,6 @@ var tabs = [
   YldmTabItem("手风琴", const ExampleAccordionPage()),
   YldmTabItem("搜索框", const ExampleSearchBoxPage()),
   YldmTabItem("评分", const ExampleRatingPage()),
-  YldmTabItem("下拉框", const ExampleDropBoxPage()),
   YldmTabItem("加载动画", const ExampleLoadingPage()),
   YldmTabItem("进度条", const ExampleProcessorPage()),
   YldmTabItem("动画", const ExampleAnimationPage()),

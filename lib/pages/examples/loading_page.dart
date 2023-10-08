@@ -1,4 +1,7 @@
+import 'package:bilibili/utils/yldm/toast_util.dart';
+import 'package:bilibili/widgets/yldm_container.dart';
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 
 class ExampleLoadingPage extends StatefulWidget {
   const ExampleLoadingPage({super.key});
@@ -10,6 +13,239 @@ class ExampleLoadingPage extends StatefulWidget {
 class _ExampleLoadingPageState extends State<ExampleLoadingPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return ListView(children: [
+      container("圆点动画"),
+      const Row(
+        children: [
+          YldmContainer(
+            margin: EdgeInsets.only(left: 20, right: 20),
+            child: GFLoader(
+              type: GFLoaderType.circle,
+              loaderColorOne: Colors.red,
+              loaderColorTwo: Colors.green,
+              loaderColorThree: Colors.blue,
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 20),
+            child: GFLoader(
+              type: GFLoaderType.circle,
+              loaderColorOne: Colors.pink,
+              loaderColorTwo: Colors.orange,
+              loaderColorThree: Colors.deepPurpleAccent,
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 20),
+            child: GFLoader(
+              type: GFLoaderType.circle,
+              loaderColorOne: Colors.green,
+              loaderColorTwo: Colors.greenAccent,
+              loaderColorThree: Colors.deepPurple,
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 20),
+            child: GFLoader(
+              type: GFLoaderType.circle,
+              loaderColorOne: Colors.deepOrangeAccent,
+              loaderColorTwo: Colors.purpleAccent,
+              loaderColorThree: Colors.tealAccent,
+            ),
+          ),
+        ],
+      ),
+      container("方形动画"),
+      const Row(
+        children: [
+          YldmContainer(
+            margin: EdgeInsets.only(left: 20, right: 20),
+            child: GFLoader(
+              type: GFLoaderType.square,
+              loaderColorOne: Colors.red,
+              loaderColorTwo: Colors.green,
+              loaderColorThree: Colors.blue,
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 20),
+            child: GFLoader(
+              type: GFLoaderType.square,
+              loaderColorOne: Colors.pink,
+              loaderColorTwo: Colors.orange,
+              loaderColorThree: Colors.deepPurpleAccent,
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 20),
+            child: GFLoader(
+              type: GFLoaderType.square,
+              loaderColorOne: Colors.green,
+              loaderColorTwo: Colors.greenAccent,
+              loaderColorThree: Colors.deepPurple,
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 20),
+            child: GFLoader(
+              type: GFLoaderType.square,
+              loaderColorOne: Colors.deepOrangeAccent,
+              loaderColorTwo: Colors.purpleAccent,
+              loaderColorThree: Colors.tealAccent,
+            ),
+          ),
+        ],
+      ),
+      container("圆形动画"),
+      const Row(
+        children: [
+          YldmContainer(
+            margin: EdgeInsets.only(left: 10, right: 10),
+            child: GFLoader(
+              type: GFLoaderType.android,
+              androidLoaderColor:
+                  AlwaysStoppedAnimation<Color>(Colors.purpleAccent),
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 10),
+            child: GFLoader(
+              type: GFLoaderType.android,
+              androidLoaderColor:
+                  AlwaysStoppedAnimation<Color>(Colors.indigoAccent),
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 10),
+            child: GFLoader(
+              type: GFLoaderType.android,
+              androidLoaderColor: AlwaysStoppedAnimation<Color>(Colors.red),
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 10),
+            child: GFLoader(
+              type: GFLoaderType.android,
+              androidLoaderColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+            ),
+          ),
+          YldmContainer(
+            child: GFLoader(
+              type: GFLoaderType.android,
+              androidLoaderColor: AlwaysStoppedAnimation<Color>(Colors.pink),
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 10),
+            child: GFLoader(
+              type: GFLoaderType.android,
+              androidLoaderColor: AlwaysStoppedAnimation<Color>(Colors.orange),
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 10),
+            child: GFLoader(
+              type: GFLoaderType.android,
+              androidLoaderColor:
+                  AlwaysStoppedAnimation<Color>(Colors.lightBlueAccent),
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 10),
+            child: GFLoader(
+              type: GFLoaderType.android,
+              androidLoaderColor: AlwaysStoppedAnimation<Color>(Colors.brown),
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 10),
+            child: GFLoader(
+              type: GFLoaderType.android,
+              androidLoaderColor: AlwaysStoppedAnimation<Color>(Colors.cyan),
+            ),
+          ),
+          YldmContainer(
+            margin: EdgeInsets.only(right: 10),
+            child: GFLoader(
+              type: GFLoaderType.android,
+              androidLoaderColor:
+                  AlwaysStoppedAnimation<Color>(Colors.greenAccent),
+            ),
+          ),
+        ],
+      ),
+      container("IOS动画"),
+      const Row(
+        children: [
+          YldmContainer(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              child: GFLoader(
+                size: GFSize.LARGE,
+                type: GFLoaderType.ios,
+              )),
+          YldmContainer(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              child: GFLoader(
+                size: GFSize.MEDIUM,
+                type: GFLoaderType.ios,
+              )),
+          YldmContainer(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              child: GFLoader(
+                size: GFSize.SMALL,
+                type: GFLoaderType.ios,
+              )),
+          YldmContainer(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              child: GFLoader(
+                size: 25,
+                type: GFLoaderType.ios,
+              )),
+          YldmContainer(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              child: GFLoader(
+                size: 20,
+                type: GFLoaderType.ios,
+              )),
+          YldmContainer(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              child: GFLoader(
+                size: 10,
+                type: GFLoaderType.ios,
+              )),
+        ],
+      ),
+      container("自定义动画"),
+      const Row(
+        children: [
+          YldmContainer(
+            margin: EdgeInsets.only(left: 10),
+            child: GFLoader(
+              type: GFLoaderType.custom,
+              loaderIconOne: Text('Please'),
+              loaderIconTwo: Text('Wait'),
+              loaderIconThree: Text('a moment'),
+            ),
+          )
+        ],
+      )
+    ]);
+  }
+
+  toast(content) {
+    ToastUtil.centerToast(content, context);
+  }
+
+  container(String title) {
+    return Container(
+      padding: const EdgeInsets.only(left: 10, top: 50, bottom: 10),
+      alignment: Alignment.centerLeft,
+      child: Text(
+        title,
+        style: const TextStyle(
+          fontSize: 20,
+        ),
+      ),
+    );
   }
 }

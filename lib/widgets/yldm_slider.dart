@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
 class BannerModel {
-  final String cover;
-  final String url;
+  final Widget cover;
+  final String? url;
 
-  const BannerModel({required this.cover, this.url = ''});
+  const BannerModel({required this.cover, this.url});
 }
 
 /// banner组件
@@ -42,8 +42,7 @@ class _YldmSliderState extends YldmState<YldmSlider> {
             margin: const EdgeInsets.all(8.0),
             child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                child: Image.network(data.cover,
-                    fit: BoxFit.cover, width: 1000.0)),
+                child: data.cover),
           );
         },
       ).toList(),
@@ -52,22 +51,98 @@ class _YldmSliderState extends YldmState<YldmSlider> {
 }
 
 List<BannerModel> sliderDemoData = [
-  const BannerModel(
-    cover: 'https://static.yldm.tech/uPic/bilibili/banner1.png',
+  BannerModel(
+    cover: Image.network('https://static.yldm.tech/uPic/bilibili/banner1.png',
+        fit: BoxFit.cover, width: 1000.0),
   ),
-  const BannerModel(
-    cover: 'https://static.yldm.tech/uPic/bilibili/banner2.png',
+  BannerModel(
+    cover: Image.network('https://static.yldm.tech/uPic/bilibili/banner2.png',
+        fit: BoxFit.cover, width: 1000.0),
   ),
-  const BannerModel(
-    cover: 'https://static.yldm.tech/uPic/bilibili/banner3.png',
+  BannerModel(
+    cover: Image.network('https://static.yldm.tech/uPic/bilibili/banner3.png',
+        fit: BoxFit.cover, width: 1000.0),
   ),
-  const BannerModel(
-    cover: 'https://static.yldm.tech/uPic/bilibili/banner1.png',
+  BannerModel(
+    cover: Image.network('https://static.yldm.tech/uPic/bilibili/banner1.png',
+        fit: BoxFit.cover, width: 1000.0),
   ),
-  const BannerModel(
-    cover: 'https://static.yldm.tech/uPic/bilibili/banner2.png',
+  BannerModel(
+    cover: Image.network('https://static.yldm.tech/uPic/bilibili/banner2.png',
+        fit: BoxFit.cover, width: 1000.0),
   ),
-  const BannerModel(
-    cover: 'https://static.yldm.tech/uPic/bilibili/banner3.png',
+  BannerModel(
+    cover: Image.network('https://static.yldm.tech/uPic/bilibili/banner3.png',
+        fit: BoxFit.cover, width: 1000.0),
+  ),
+];
+
+List<BannerModel> sliderTextDemoData = [
+  BannerModel(
+    cover: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        color: Colors.purple,
+      ),
+      width: 1000,
+      child: const Center(
+        child: Text(
+          '公告1',
+          style: TextStyle(fontSize: 16, color: Colors.white),
+        ),
+      ),
+    ),
+  ),
+  BannerModel(
+    cover: Container(
+        width: 1000,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.blue,
+        ),
+        child: const Center(
+            child: Text(
+          '公告2',
+          style: TextStyle(fontSize: 16, color: Colors.white),
+        ))),
+  ),
+  BannerModel(
+    cover: Container(
+        width: 1000,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.red,
+        ),
+        child: const Center(
+            child: Text(
+          '公告3',
+          style: TextStyle(fontSize: 16, color: Colors.white),
+        ))),
+  ),
+  BannerModel(
+    cover: Container(
+        width: 1000,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.orange,
+        ),
+        child: const Center(
+            child: Text(
+          '公告4',
+          style: TextStyle(fontSize: 16, color: Colors.white),
+        ))),
+  ),
+  BannerModel(
+    cover: Container(
+        width: 1000,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.pink,
+        ),
+        child: const Center(
+            child: Text(
+          '公告5',
+          style: TextStyle(fontSize: 16, color: Colors.white),
+        ))),
   ),
 ];
