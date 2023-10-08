@@ -131,6 +131,29 @@ class _ExampleCheckBoxPageState extends State<ExampleCheckBoxPage> {
               checked: true,
             ),
           ],
+        ),
+        container("可选择卡片"),
+        const Column(
+          children: [
+            YldmCheckboxListTile(
+                title: "Hercle, habitio albus!.",
+                subTitle: "Hercle, habitio albus!.",
+                avatar: AssetImage("assets/images/avatar.png")),
+            YldmCheckboxListTile(
+                title: "Placidus mons solite prensionems consilium est.",
+                subTitle:
+                    "Brush each side of the lobster with three tablespoons of pork shoulder.",
+                avatar: AssetImage("assets/images/avatar.png")),
+            YldmCheckboxListTile(
+                title:
+                    "Try fluffing loaf tossed with crême fraîche, varnished with celery.",
+                subTitle: "It is a lunar faith, sir.",
+                avatar: AssetImage("assets/images/avatar.png")),
+            YldmCheckboxListTile(
+                title: "Sunt urbses perdere.",
+                subTitle: "The sea is a green, mysterious place.",
+                avatar: AssetImage("assets/images/avatar.png")),
+          ],
         )
       ],
     );

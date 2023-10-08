@@ -56,3 +56,56 @@ class _YldmCheckboxState extends State<YldmCheckbox> {
     );
   }
 }
+
+class YldmCheckboxListTile extends StatefulWidget {
+  final String title;
+  final String subTitle;
+  final ImageProvider avatar;
+  final Color? color;
+  final ValueChanged<bool>? onChanged;
+
+  const YldmCheckboxListTile({
+    super.key,
+    required this.title,
+    required this.subTitle,
+    required this.avatar,
+    this.color,
+    this.onChanged,
+  });
+
+  @override
+  State<YldmCheckboxListTile> createState() => _YldmCheckboxListTileState();
+}
+
+class _YldmCheckboxListTileState extends State<YldmCheckboxListTile> {
+  bool isChecked = false;
+
+  @override
+  Widget build(BuildContext context) {
+    var title = widget.title;
+    if (title.length > 20) title = "${title.substring(0, 20)}...";
+    var subTitle = widget.subTitle;
+    if (subTitle.length > 60) subTitle = "${subTitle.substring(0, 60)}...";
+
+    return GFCheckboxListTile(
+      titleText: title,
+      subTitleText: subTitle,
+      avatar: GFAvatar(
+        backgroundImage: widget.avatar,
+      ),
+      size: 25,
+      activeBgColor: Colors.green,
+      type: GFCheckboxType.circle,
+      color: widget.color ?? Colors.grey[50],
+      activeIcon: const Icon(Icons.check, size: 15, color: Colors.white),
+      onChanged: (value) {
+        setState(() {
+          isChecked = value;
+          widget.onChanged?.call(value);
+        });
+      },
+      value: isChecked,
+      inactiveIcon: null,
+    );
+  }
+}
