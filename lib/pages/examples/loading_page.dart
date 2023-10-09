@@ -217,7 +217,7 @@ class _ExampleLoadingPageState extends State<ExampleLoadingPage> {
         ],
       ),
       container("自定义动画"),
-      const Row(
+      const Wrap(
         children: [
           YldmContainer(
             margin: EdgeInsets.only(left: 10),
@@ -230,7 +230,6 @@ class _ExampleLoadingPageState extends State<ExampleLoadingPage> {
           ),
           YldmContainer(child: YldmLottie(url: "assets/lottie/ball.json")),
           YldmContainer(child: YldmLottie(url: "assets/lottie/cat.json")),
-          YldmContainer(child: YldmLottie(url: "assets/lottie/cube.json")),
           YldmContainer(child: YldmLottie(url: "assets/lottie/cup.json")),
           YldmContainer(child: YldmLottie(url: "assets/lottie/cycle.json")),
           YldmContainer(child: YldmLottie(url: "assets/lottie/done.json")),
