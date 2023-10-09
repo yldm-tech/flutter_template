@@ -1,5 +1,6 @@
 import 'package:bilibili/utils/yldm/toast_util.dart';
 import 'package:bilibili/widgets/yldm_container.dart';
+import 'package:bilibili/widgets/yldm_lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
@@ -226,7 +227,31 @@ class _ExampleLoadingPageState extends State<ExampleLoadingPage> {
               loaderIconTwo: Text('Wait'),
               loaderIconThree: Text('a moment'),
             ),
-          )
+          ),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/ball.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/cat.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/cube.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/cup.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/cycle.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/done.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/earth.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/loading.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/point1.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/point2.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/point3.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/point4.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/point6.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/point7.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/point8.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/point9.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/point10.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/qr.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/react.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/robot.json")),
+          YldmContainer(
+              child: YldmLottie(url: "assets/lottie/running_man.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/water.json")),
+          YldmContainer(child: YldmLottie(url: "assets/lottie/work.json")),
         ],
       )
     ]);
