@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_line_sdk/flutter_line_sdk.dart';
-import 'package:getwidget/getwidget.dart';
 import 'package:myetc/application.dart';
+import 'package:myetc/routers/routes.dart';
 import 'package:myetc/utils/state/yldm_state.dart';
 import 'package:myetc/utils/yldm/toast_util.dart';
 import 'package:myetc/widgets/yldm_button.dart';
@@ -29,7 +29,6 @@ class _LoginPageState extends YldmState<LoginPage> {
       debugPrint(result.userProfile?.displayName);
       debugPrint(result.userProfile?.pictureUrl);
       if (!context.mounted) return;
-      Application.router;
     } on PlatformException catch (e) {
       ToastUtil.centerToast(e.toString(), context);
     }
@@ -62,20 +61,18 @@ class _LoginPageState extends YldmState<LoginPage> {
             margin: const EdgeInsets.only(bottom: 50, top: 50),
             child: const Column(
               children: [
-                GFTypography(
-                  text: 'MY ETC',
-                  type: GFTypographyType.typo1,
-                  dividerColor: Colors.transparent,
+                Text(
+                  'MY ETC',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
-                GFTypography(
-                  text: 'ETC請求書情報を迅速に把握する',
-                  type: GFTypographyType.typo5,
-                  dividerColor: Colors.transparent,
+                Text(
+                  'ETC請求書情報を迅速に把握する',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                 ),
               ],
             ),
           ),
-          YldmButton('登陆', enabled: true, onPressed: () {
+          YldmButton('ログイン', enabled: true, onPressed: () {
             _signIn();
           })
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:myetc/pages/favorite/favorite_page.dart';
 import 'package:myetc/pages/home/home_page.dart';
 import 'package:myetc/pages/my/my_page.dart';
@@ -41,8 +42,8 @@ class _NavigatorPageState extends YldmState<NavigatorPage> {
               },
           items: [
             bottomItem('首页', Icons.home, 0),
-            bottomItem('插件', Icons.flutter_dash_rounded, 1),
-            bottomItem('收藏', Icons.favorite, 2),
+            bottomItem('明细', FontAwesomeIcons.book, 1),
+            bottomItem('积分', Icons.add_box_sharp, 2),
             bottomItem('我的', Icons.mood, 3),
           ]),
       body: PageView(

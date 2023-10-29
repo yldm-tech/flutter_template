@@ -41,19 +41,24 @@ class _YldmTabState extends YldmState<YldmTab>
         children: [
           Container(
             color: Colors.white,
-            child: TabBar(
-              isScrollable: true,
-              controller: tabController,
-              labelStyle: const TextStyle(fontSize: 16),
-              labelPadding: const EdgeInsets.only(left: 20, right: 20),
-              indicator: const UnderlineTabIndicator(
-                borderSide: BorderSide(color: Colors.pink, width: 2),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: TabBar(
+                isScrollable: true,
+                physics: const NeverScrollableScrollPhysics(),
+                controller: tabController,
+                labelColor: Colors.purple,
+                labelStyle: const TextStyle(fontSize: 16),
+                labelPadding: const EdgeInsets.only(left: 20, right: 20),
+                indicator: const UnderlineTabIndicator(
+                  borderSide: BorderSide(color: Colors.purple, width: 2),
+                ),
+                tabs: widget.tabs.map<Tab>((tab) {
+                  return Tab(
+                    text: tab.tabTitle,
+                  );
+                }).toList(),
               ),
-              tabs: widget.tabs.map<Tab>((tab) {
-                return Tab(
-                  text: tab.tabTitle,
-                );
-              }).toList(),
             ),
           ),
           Flexible(
