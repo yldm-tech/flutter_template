@@ -8,7 +8,7 @@
 PRODUCT_NAME = bilibili
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = tech.yldm.bilibili
+PRODUCT_BUNDLE_IDENTIFIER = tech.yldm.myetc
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2023 tech.yldm. All rights reserved.

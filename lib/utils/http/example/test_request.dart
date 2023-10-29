@@ -1,4 +1,4 @@
-import 'package:bilibili/utils/http/base_request.dart';
+import 'package:myetc/utils/http/base_request.dart';
 
 class TestRequest extends BaseRequest {
   @override

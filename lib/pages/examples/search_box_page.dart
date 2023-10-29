@@ -1,5 +1,5 @@
-import 'package:bilibili/widgets/yldm_search_box.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/widgets/yldm_search_box.dart';
 
 class ExampleSearchBoxPage extends StatefulWidget {
   const ExampleSearchBoxPage({super.key});

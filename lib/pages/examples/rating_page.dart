@@ -1,6 +1,6 @@
-import 'package:bilibili/utils/yldm/toast_util.dart';
-import 'package:bilibili/widgets/yldm_rating.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/utils/yldm/toast_util.dart';
+import 'package:myetc/widgets/yldm_rating.dart';
 
 class ExampleRatingPage extends StatefulWidget {
   const ExampleRatingPage({super.key});

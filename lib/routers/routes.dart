@@ -1,10 +1,10 @@
-import 'package:bilibili/application.dart';
-import 'package:bilibili/pages/home/home_page.dart';
-import 'package:bilibili/pages/login_page.dart';
-import 'package:bilibili/pages/not_found_page.dart';
-import 'package:bilibili/pages/register_page.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/application.dart';
+import 'package:myetc/pages/home/home_page.dart';
+import 'package:myetc/pages/login_page.dart';
+import 'package:myetc/pages/not_found_page.dart';
+import 'package:myetc/pages/register_page.dart';
 
 class Routes {
   static const String home = '/home';

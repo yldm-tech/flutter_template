@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class YldmColor {
   // 主题色
-  static const MaterialColor primary = MaterialColor(0Xfffb7299, <int, Color>{
-    50: Color(0xffff9db5),
+  static const MaterialColor primary = MaterialColor(0xFF894beb, <int, Color>{
+    50: Color(0xFF894beb),
   });
 
   static const MaterialColor white = MaterialColor(0xFFFFFFFF, <int, Color>{

@@ -1,12 +1,17 @@
-import 'package:bilibili/application.dart';
-import 'package:bilibili/pages/navigator_page.dart';
-import 'package:bilibili/routers/routes.dart';
-import 'package:bilibili/utils/cache/yldm_cache.dart';
-import 'package:bilibili/utils/yldm/color_util.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_line_sdk/flutter_line_sdk.dart';
+import 'package:myetc/application.dart';
+import 'package:myetc/pages/login_page.dart';
+import 'package:myetc/routers/routes.dart';
+import 'package:myetc/utils/cache/yldm_cache.dart';
+import 'package:myetc/utils/yldm/color_util.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  LineSDK.instance.setup("${2000201666}").then((_) {
+    debugPrint("LineSDK Prepared");
+  });
   runApp(const MyApp());
 }
 
@@ -35,7 +40,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
-      home: const NavigatorPage(),
+      home: const LoginPage(),
       theme: ThemeData(
         primarySwatch: YldmColor.white,
         useMaterial3: true,

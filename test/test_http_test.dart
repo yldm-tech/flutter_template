@@ -1,5 +1,5 @@
-import 'package:bilibili/utils/http/example/test_request.dart';
-import 'package:bilibili/utils/http/yldm_net.dart';
+import 'package:myetc/utils/http/example/test_request.dart';
+import 'package:myetc/utils/http/yldm_net.dart';
 import 'package:test/test.dart';
 
 void main() {

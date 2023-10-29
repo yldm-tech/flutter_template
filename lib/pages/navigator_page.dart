@@ -1,10 +1,10 @@
-import 'package:bilibili/pages/favorite/favorite_page.dart';
-import 'package:bilibili/pages/home/home_page.dart';
-import 'package:bilibili/pages/my/my_page.dart';
-import 'package:bilibili/pages/plugins/plugin_page.dart';
-import 'package:bilibili/utils/state/yldm_state.dart';
-import 'package:bilibili/utils/yldm/color_util.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/pages/favorite/favorite_page.dart';
+import 'package:myetc/pages/home/home_page.dart';
+import 'package:myetc/pages/my/my_page.dart';
+import 'package:myetc/pages/plugins/plugin_page.dart';
+import 'package:myetc/utils/state/yldm_state.dart';
+import 'package:myetc/utils/yldm/color_util.dart';
 
 class NavigatorPage extends StatefulWidget {
   const NavigatorPage({super.key});

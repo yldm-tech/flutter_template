@@ -1,13 +1,11 @@
-import 'package:bilibili/application.dart';
-import 'package:bilibili/requests/login_request.dart';
-import 'package:bilibili/routers/routes.dart';
-import 'package:bilibili/utils/state/yldm_state.dart';
-import 'package:bilibili/utils/yldm/string_util.dart';
-import 'package:bilibili/widgets/login_effect.dart';
-import 'package:bilibili/widgets/yldm_appbar.dart';
-import 'package:bilibili/widgets/yldm_button.dart';
-import 'package:bilibili/widgets/yldm_input.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_line_sdk/flutter_line_sdk.dart';
+import 'package:getwidget/getwidget.dart';
+import 'package:myetc/application.dart';
+import 'package:myetc/utils/state/yldm_state.dart';
+import 'package:myetc/utils/yldm/toast_util.dart';
+import 'package:myetc/widgets/yldm_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -17,92 +15,71 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends YldmState<LoginPage> {
-  var isPassword = false;
   String username = '';
   String password = '';
   bool loginEnable = false;
 
-  checkInput() {
-    var checked =
-        StringUtil.isNotEmpty(username) && StringUtil.isNotEmpty(password);
-    if (checked) {
-      setState(() {
-        loginEnable = true;
-      });
-    } else {
-      setState(() {
-        loginEnable = false;
-      });
+  void _signIn() async {
+    try {
+      final result = await LineSDK.instance.login();
+      // user id -> result.userProfile?.userId
+      // user name -> result.userProfile?.displayName
+      // user avatar -> result.userProfile?.pictureUrl
+      debugPrint(result.userProfile?.userId);
+      debugPrint(result.userProfile?.displayName);
+      debugPrint(result.userProfile?.pictureUrl);
+      if (!context.mounted) return;
+      Application.router;
+    } on PlatformException catch (e) {
+      ToastUtil.centerToast(e.toString(), context);
+    }
+  }
+
+  _logout() async {
+    try {
+      await LineSDK.instance.logout();
+    } on PlatformException catch (e) {
+      debugPrint(e.message);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appBar("登陆", "注册", () {
-          Application.router.navigateTo(context, Routes.register);
-        }),
         body: Container(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          child: ListView(
-            children: [
-              LoginEffect(obscureText: isPassword),
-              LoginInput(
-                "用户名",
-                hint: "请输入用户名",
-                lineStretch: true,
-                onFocus: (text) {
-                  setState(() {
-                    isPassword = false;
-                  });
-                },
-                onChanged: (text) {
-                  username = text;
-                  checkInput();
-                },
-              ),
-              LoginInput(
-                "密    码",
-                hint: "请输入密码",
-                lineStretch: true,
-                obscureText: true,
-                onChanged: (text) {
-                  password = text;
-                  checkInput();
-                },
-                onFocus: (text) {
-                  setState(() {
-                    isPassword = true;
-                    checkInput();
-                  });
-                },
-              ),
-              YldmButton(
-                '登陆',
-                enabled: loginEnable,
-                onPressed: () {
-                  LoginRequest().doRequest(params: {
-                    "username": username,
-                    "password": password,
-                  }).then((result) => {
-                        if (result['success'])
-                          {
-                            Application.router.navigateTo(
-                              context,
-                              Routes.home,
-                              clearStack: true,
-                            ),
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('登陆成功!'),
-                              ),
-                            ),
-                          }
-                      });
-                },
-              )
-            ],
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: ListView(
+        children: [
+          const SizedBox(
+            height: 100,
           ),
-        ));
+          const Image(
+            image: AssetImage('assets/images/hero.png'),
+            height: 180,
+          ),
+          Container(
+            alignment: Alignment.center,
+            margin: const EdgeInsets.only(bottom: 50, top: 50),
+            child: const Column(
+              children: [
+                GFTypography(
+                  text: 'MY ETC',
+                  type: GFTypographyType.typo1,
+                  dividerColor: Colors.transparent,
+                ),
+                GFTypography(
+                  text: 'ETC請求書情報を迅速に把握する',
+                  type: GFTypographyType.typo5,
+                  dividerColor: Colors.transparent,
+                ),
+              ],
+            ),
+          ),
+          YldmButton('登陆', enabled: true, onPressed: () {
+            _signIn();
+          })
+        ],
+      ),
+    ));
   }
 }

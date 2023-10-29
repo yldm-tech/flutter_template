@@ -1,5 +1,5 @@
-import 'package:bilibili/widgets/yldm_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/widgets/yldm_slider.dart';
 
 class ExampleSliderPage extends StatefulWidget {
   const ExampleSliderPage({super.key});

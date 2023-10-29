@@ -1,6 +1,6 @@
-import 'package:bilibili/utils/socket/socket.dart';
-import 'package:bilibili/utils/yldm/yldm_util.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/utils/socket/socket.dart';
+import 'package:myetc/utils/yldm/yldm_util.dart';
 import 'package:web_socket_channel/io.dart';
 
 class YldmSocket implements ISocket {

@@ -1,6 +1,6 @@
-import 'package:bilibili/utils/state/yldm_state.dart';
-import 'package:bilibili/utils/yldm/color_util.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/utils/state/yldm_state.dart';
+import 'package:myetc/utils/yldm/color_util.dart';
 
 class LoginInput extends StatefulWidget {
   const LoginInput(

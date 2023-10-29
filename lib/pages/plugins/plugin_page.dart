@@ -1,5 +1,5 @@
-import 'package:bilibili/widgets/yldm_poster.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/widgets/yldm_poster.dart';
 
 class PluginPage extends StatelessWidget {
   const PluginPage({super.key});

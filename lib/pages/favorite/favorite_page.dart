@@ -1,6 +1,6 @@
-import 'package:bilibili/utils/state/yldm_state.dart';
-import 'package:bilibili/widgets/yldm_grid_view.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/utils/state/yldm_state.dart';
+import 'package:myetc/widgets/yldm_grid_view.dart';
 
 class FavoritePage extends StatefulWidget {
   const FavoritePage({super.key});

@@ -1,7 +1,7 @@
-import 'package:bilibili/utils/yldm/toast_util.dart';
-import 'package:bilibili/widgets/yldm_container.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:myetc/utils/yldm/toast_util.dart';
+import 'package:myetc/widgets/yldm_container.dart';
 
 class ExampleSwitchPage extends StatefulWidget {
   const ExampleSwitchPage({super.key});

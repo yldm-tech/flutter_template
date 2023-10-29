@@ -1,8 +1,8 @@
 import 'dart:convert' as convert;
 
-import 'package:bilibili/utils/http/base_request.dart';
-import 'package:bilibili/utils/http/yldm_net_adapter.dart';
 import 'package:http/http.dart' as http;
+import 'package:myetc/utils/http/base_request.dart';
+import 'package:myetc/utils/http/yldm_net_adapter.dart';
 
 class HttpAdapter extends YldmNetAdapter {
   @override

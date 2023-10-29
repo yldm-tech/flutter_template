@@ -1,7 +1,7 @@
-import 'package:bilibili/utils/http/base_request.dart';
-import 'package:bilibili/utils/http/yldm_error.dart';
-import 'package:bilibili/utils/http/yldm_net_adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:myetc/utils/http/base_request.dart';
+import 'package:myetc/utils/http/yldm_error.dart';
+import 'package:myetc/utils/http/yldm_net_adapter.dart';
 
 class DioAdapter extends YldmNetAdapter {
   @override

@@ -1,6 +1,6 @@
-import 'package:bilibili/utils/state/yldm_state.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:myetc/utils/state/yldm_state.dart';
 
 class BannerModel {
   final Widget cover;

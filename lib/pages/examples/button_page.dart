@@ -1,8 +1,8 @@
-import 'package:bilibili/utils/yldm/toast_util.dart';
-import 'package:bilibili/widgets/yldm_container.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:myetc/utils/yldm/toast_util.dart';
+import 'package:myetc/widgets/yldm_container.dart';
 
 class ExampleButtonPage extends StatefulWidget {
   const ExampleButtonPage({super.key});

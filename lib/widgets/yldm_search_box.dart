@@ -32,7 +32,7 @@ class _YldmSearchBoxState extends State<YldmSearchBox> {
       },
       onItemSelected: (item) {
         setState(() {
-          print(item);
+          debugPrint(item);
         });
       },
     );

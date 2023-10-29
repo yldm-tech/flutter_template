@@ -1,7 +1,7 @@
-import 'package:bilibili/widgets/yldm_poster.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:myetc/widgets/yldm_poster.dart';
 
 class ExampleCardPage extends StatefulWidget {
   const ExampleCardPage({super.key});

@@ -1,11 +1,11 @@
-import 'package:bilibili/requests/register_request.dart';
-import 'package:bilibili/utils/state/yldm_state.dart';
-import 'package:bilibili/utils/yldm/string_util.dart';
-import 'package:bilibili/widgets/login_effect.dart';
-import 'package:bilibili/widgets/yldm_appbar.dart';
-import 'package:bilibili/widgets/yldm_button.dart';
-import 'package:bilibili/widgets/yldm_input.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/requests/register_request.dart';
+import 'package:myetc/utils/state/yldm_state.dart';
+import 'package:myetc/utils/yldm/string_util.dart';
+import 'package:myetc/widgets/login_effect.dart';
+import 'package:myetc/widgets/yldm_appbar.dart';
+import 'package:myetc/widgets/yldm_button.dart';
+import 'package:myetc/widgets/yldm_input.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback onJumpLogin;

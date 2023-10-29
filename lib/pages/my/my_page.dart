@@ -1,9 +1,9 @@
-import 'package:bilibili/utils/http/yldm_downloader.dart';
-import 'package:bilibili/utils/socket/socket.dart';
-import 'package:bilibili/utils/state/yldm_state.dart';
-import 'package:bilibili/utils/yldm/yldm_util.dart';
-import 'package:bilibili/widgets/yldm_loading_container.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/utils/http/yldm_downloader.dart';
+import 'package:myetc/utils/socket/socket.dart';
+import 'package:myetc/utils/state/yldm_state.dart';
+import 'package:myetc/utils/yldm/yldm_util.dart';
+import 'package:myetc/widgets/yldm_loading_container.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({super.key});

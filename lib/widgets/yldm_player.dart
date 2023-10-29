@@ -1,7 +1,7 @@
-import 'package:bilibili/utils/yldm/color_util.dart';
-import 'package:bilibili/widgets/yldm_cached_network_image.dart';
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/utils/yldm/color_util.dart';
+import 'package:myetc/widgets/yldm_cached_network_image.dart';
 import 'package:video_player/video_player.dart';
 
 /// 视频播放器

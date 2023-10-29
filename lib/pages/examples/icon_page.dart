@@ -1,5 +1,5 @@
-import 'package:bilibili/utils/yldm/random_util.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/utils/yldm/random_util.dart';
 
 class ExampleIconPage extends StatefulWidget {
   const ExampleIconPage({super.key});
@@ -19,12 +19,11 @@ class _ExampleIconPageState extends State<ExampleIconPage> {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 5, crossAxisSpacing: 1),
             children: allIcons
-                .map((e) =>
-                Icon(
-                  e,
-                  size: 40,
-                  color: RandomUtil.randomColor(),
-                ))
+                .map((e) => Icon(
+                      e,
+                      size: 40,
+                      color: RandomUtil.randomColor(),
+                    ))
                 .toList()),
       ],
     );

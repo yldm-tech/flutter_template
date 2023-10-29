@@ -1,6 +1,6 @@
-import 'package:bilibili/utils/state/yldm_state.dart';
-import 'package:bilibili/widgets/yldm_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/utils/state/yldm_state.dart';
+import 'package:myetc/widgets/yldm_slider.dart';
 
 class RankPage extends StatefulWidget {
   const RankPage({super.key});

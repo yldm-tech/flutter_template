@@ -1,5 +1,5 @@
-import 'package:bilibili/utils/cache/yldm_cache.dart';
-import 'package:bilibili/utils/http/base_request.dart';
+import 'package:myetc/utils/cache/yldm_cache.dart';
+import 'package:myetc/utils/http/base_request.dart';
 
 class LoginRequest extends BaseRequest {
   @override

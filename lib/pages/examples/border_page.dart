@@ -1,6 +1,6 @@
-import 'package:bilibili/widgets/yldm_border.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:myetc/widgets/yldm_border.dart';
 
 class ExampleBorderPage extends StatefulWidget {
   const ExampleBorderPage({super.key});

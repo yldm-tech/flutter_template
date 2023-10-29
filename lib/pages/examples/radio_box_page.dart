@@ -1,5 +1,5 @@
-import 'package:bilibili/widgets/yldm_radio.dart';
 import 'package:flutter/material.dart';
+import 'package:myetc/widgets/yldm_radio.dart';
 
 class ExampleRadioPage extends StatefulWidget {
   const ExampleRadioPage({super.key});
@@ -23,6 +23,7 @@ class _ExampleRadioPageState extends State<ExampleRadioPage> {
       RadioItem('Radio 6', 6),
     ];
 
-    return YldmRadio(items: items, onChanged: (val) => print(val));
+    return YldmRadio(
+        items: items, onChanged: (val) => debugPrint(val as String?));
   }
 }

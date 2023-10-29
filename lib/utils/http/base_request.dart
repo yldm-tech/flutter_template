@@ -1,5 +1,5 @@
-import 'package:bilibili/utils/http/yldm_net.dart';
-import 'package:bilibili/utils/yldm/yldm_util.dart';
+import 'package:myetc/utils/http/yldm_net.dart';
+import 'package:myetc/utils/yldm/yldm_util.dart';
 
 enum HttpMethod { get, post, put, delete, patch }
 
