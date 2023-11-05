@@ -21,7 +21,7 @@ class Routes {
     });
 
     // root
-    router.define(register, handler: Handler(
+    router.define(root, handler: Handler(
         handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
       return const NavigatorPage();
     }));
