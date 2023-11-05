@@ -45,6 +45,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/common/
+    - assets/images/icons/
     - assets/lottie/
     # fonts:
     # - family: SourceSans3

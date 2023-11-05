@@ -2,7 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_line_sdk/flutter_line_sdk.dart';
 import 'package:myetc/application.dart';
-import 'package:myetc/pages/navigator_page.dart';
+import 'package:myetc/pages/launch_page.dart';
 import 'package:myetc/routers/routes.dart';
 import 'package:myetc/utils/cache/yldm_cache.dart';
 import 'package:myetc/utils/yldm/color_util.dart';
@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
-      home: const NavigatorPage(),
+      home: const LaunchPage(),
       theme: ThemeData(
         primarySwatch: YldmColor.white,
         useMaterial3: true,

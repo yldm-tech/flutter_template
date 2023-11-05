@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_line_sdk/flutter_line_sdk.dart';
-import 'package:myetc/application.dart';
-import 'package:myetc/routers/routes.dart';
 import 'package:myetc/utils/state/yldm_state.dart';
 import 'package:myetc/utils/yldm/toast_util.dart';
 import 'package:myetc/widgets/yldm_button.dart';
